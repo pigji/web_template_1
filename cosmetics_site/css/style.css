@@ -1,12 +1,12 @@
 /*폰트*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Nanum+Gothic:wght@400;700;800&display=swap');
 
 /*초기화*/
 *{margin: 0; padding: 0;}
 ul, li{list-style: none;}
 a{text-decoration: none; color: inherit;}
 body{
-  font-family: "Nanum Gothic", Georgia;
+  /*폰트*/
   font-size: 14px;
   color: #111;
   box-sizing: border-box;
@@ -14,52 +14,105 @@ body{
 
 /*공통 속성*/
 .container{
-  min-width: 1200px;
+  min-width: 1000px;
   width: 100%;
   margin: 0 auto; /*가운데정렬*/
   box-sizing: border-box;
   padding: 0 10px;
-  font-family: "Montserrat"
+  /*폰트*/
 }
 
 /*상단부분*/
 header{
-  min-width: 1200px;
+  min-width: 1000px;
   width: 100%;
   background-color: white;
-  border: 2px solid hotpink;
+  /*border: 2px solid hotpink; 영역 확인용*/
 }
 
 /*배경이미지+메뉴 부분*/
 .topMenu{
   width: 100%;
-  height: 500px;
+  height: 700px;
   display: flex;
   justify-content: space-between;
   font-weight: bold;
 }
-.topMenu ul{
-  display: flex;
-}
-.topMenu > .Topbgimg{
+.topMenu > .Topbgimg{ /*배경이미지*/
   width: 100%;
   background: url(../img/화장품배경이미지1.jpg) center/cover;
   position: relative;
   display: flex;
   justify-content: space-between;
-  
 }
-.Topbgimg > .topMenu{
+.Topbgimg > .topMenu{ /*상단부분:메뉴*/
   width: 1200px;
   height: 500px;
   position: absolute;
 }
+.topMenu ul{
+  /*border: 1px solid red;*/
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 50px;
+  padding: 0 20px;
+}
+.topNav > ul > li{
+  padding: 0 20px;
+  font-size: 20px;
+  text-align: center;
+}
+/*마우스이벤트 효과*/
 
 
-
-
-
-.topMenu > h1{
-  font-size: 42px;
+.topMenu h1{
+  font-size: 36px;
   height: 20px;
+}
+/*banner 부분*/
+#banner{
+  background-color: white;
+  min-width: 1200px;
+}
+#banner > .container{
+  border: 2px solid blue;
+  width: 100%;
+  padding: 70px;
+  margin: 0 auto;
+}
+.banner-wrap{
+  display: flex;
+}
+#banner > .container > h1{
+  font-size: 42px;
+}
+/*banner 이미지요소*/
+#banner .banner_box{
+  width: 300px;
+  text-align: center;
+  margin: 0 10px;
+}
+#banner .banner_box img{
+  text-align: center;
+  width: 280px;
+  height: 280px;
+  border-radius: 30%;
+}
+
+/*이미지+문구 부분*/
+#img1{
+  background-color: #666;
+  border: 2px solid orange;
+}
+#img1 > .container > .imglist > img{
+  width: 500px;
+  height: 500px;
+}
+#img1 > .container > .imglist{  /*이미지+텍스트 부분*/
+  padding: 10px 40px;
+  margin: 0 auto;
+  display: flex;
+}
+.txt{
+  background-color: white;
 }
