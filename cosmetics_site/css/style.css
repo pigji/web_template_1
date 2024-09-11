@@ -1,0 +1,65 @@
+/*폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*초기화*/
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+body{
+  font-family: "Nanum Gothic", Georgia;
+  font-size: 14px;
+  color: #111;
+  box-sizing: border-box;
+}
+
+/*공통 속성*/
+.container{
+  min-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /*가운데정렬*/
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-family: "Montserrat"
+}
+
+/*상단부분*/
+header{
+  min-width: 1200px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid hotpink;
+}
+
+/*배경이미지+메뉴 부분*/
+.topMenu{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.topMenu ul{
+  display: flex;
+}
+.topMenu > .Topbgimg{
+  width: 100%;
+  background: url(../img/화장품배경이미지1.jpg) center/cover;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.Topbgimg > .topMenu{
+  width: 1200px;
+  height: 500px;
+  position: absolute;
+}
+
+
+
+
+
+.topMenu > h1{
+  font-size: 42px;
+  height: 20px;
+}
