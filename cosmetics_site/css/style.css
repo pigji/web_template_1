@@ -1,118 +1,145 @@
 /*폰트*/
 @import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Nanum+Gothic:wght@400;700;800&display=swap');
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /*초기화*/
 *{margin: 0; padding: 0;}
 ul, li{list-style: none;}
 a{text-decoration: none; color: inherit;}
 body{
-  /*폰트*/
+  font-family: 'GmarketSansMedium';
   font-size: 14px;
   color: #111;
   box-sizing: border-box;
 }
 
-/*공통 속성*/
+/*부트스트랩 슬라이드 배경*/
+#carouselExampleIndicators{
+  position: relative;
+}
+.carousel-inner img{
+  height: 850px;
+}
+
+/*공통부분:container*/
 .container{
   min-width: 1000px;
   width: 100%;
   margin: 0 auto; /*가운데정렬*/
   box-sizing: border-box;
   padding: 0 10px;
-  /*폰트*/
 }
 
-/*상단부분*/
-header{
-  min-width: 1000px;
-  width: 100%;
-  background-color: white;
-  /*border: 2px solid hotpink; 영역 확인용*/
-}
-
-/*배경이미지+메뉴 부분*/
+/*상단 로고+메뉴부분*/
 .topMenu{
-  width: 100%;
-  height: 700px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
-.topMenu > .Topbgimg{ /*배경이미지*/
-  width: 100%;
-  background: url(../img/화장품배경이미지1.jpg) center/cover;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-.Topbgimg > .topMenu{ /*상단부분:메뉴*/
   width: 1200px;
-  height: 500px;
-  position: absolute;
-}
-.topMenu ul{
-  /*border: 1px solid red;*/
+  position: absolute; 
+  top: 0; left: 50%;  /*위치설정*/
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-around;
-  margin: 5px 50px;
-  padding: 0 20px;
+  justify-content: space-between; /*요소 양끝에 배치*/
 }
-.topNav > ul > li{
-  padding: 0 20px;
+.topNav > ul{
+  display: flex;
+}
+.topNav li{
   font-size: 20px;
-  text-align: center;
+  font-weight: bold;
+  margin: 10px 20px;
 }
-/*마우스이벤트 효과*/
 
-
-.topMenu h1{
-  font-size: 36px;
-  height: 20px;
-}
-/*banner 부분*/
+/*banner*/
 #banner{
-  background-color: white;
-  min-width: 1200px;
-}
-#banner > .container{
-  border: 2px solid blue;
   width: 100%;
-  padding: 70px;
-  margin: 0 auto;
+  height: 500px;
+  border: 5px solid purple;
+  padding: 30px 10px;
 }
 .banner-wrap{
+  border: 2px solid black;  /*영역 확인용*/
+  width: 100%;
+  margin: 0 auto;
   display: flex;
 }
-#banner > .container > h1{
-  font-size: 42px;
+.banner-wrap h3, p{
+  margin-left: 50px;
 }
-/*banner 이미지요소*/
-#banner .banner_box{
-  width: 300px;
-  text-align: center;
-  margin: 0 10px;
+.banner_box{
+  margin: 0 auto;
+  /*가운데정렬*/
 }
-#banner .banner_box img{
-  text-align: center;
+.banner_box > img{
   width: 280px;
   height: 280px;
   border-radius: 30%;
+  margin: 10px;
 }
 
-/*이미지+문구 부분*/
-#img1{
-  background-color: #666;
-  border: 2px solid orange;
-}
-#img1 > .container > .imglist > img{
-  width: 500px;
+/*이미지+텍스트 박스1*/
+#image-textbox{
+  width: 100%;
   height: 500px;
+  border: 5px solid yellow;
+  padding: 30px 10px;
 }
-#img1 > .container > .imglist{  /*이미지+텍스트 부분*/
-  padding: 10px 40px;
+.it-box{
+  border: 2px solid orange;
+  background-color: #f1eded;
+  width: 100%;
   margin: 0 auto;
   display: flex;
+  position: relative;
 }
-.txt{
-  background-color: white;
+.it-box > img{  /*이미지*/
+  width: 650px;
+  height: 400px;
 }
+.it-box > .txt{
+  margin: 60px 30px;
+}
+.it-box > .txt > h1{
+  font-size: 36px;
+}
+.it-box > .txt > p{
+  font-size: 14px;
+  line-height: 25px;
+}
+.it-box > .img-txt-btn{
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  right: 40px; bottom: 20px;
+  border: 1px solid #666;
+  background-color: transparent;
+}
+
+/*sub-image-box*/
+#sub-image-box1{
+  width: 100%;
+  height: 700px;
+  border: 5px solid pink;
+  padding: 30px 10px;
+}
+.image_wrap{
+  display: flex;
+  border: 2px solid black;
+  margin: 0 auto;
+  /*가운데정렬*/
+}
+/*이미지요소*/
+.sub-img > img{
+  width: 300px;
+  height: 450px;
+  border-radius: 20%;
+  margin: 10px;
+}
+.sub-img > h1, .sub-img > p{
+  margin-left: 50px;
+}
+
