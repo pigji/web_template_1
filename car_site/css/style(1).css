@@ -1,0 +1,201 @@
+/*폰트*/
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*초기화*/
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+body{
+  font-family: 'GangwonEduPowerExtraBoldA';
+  font-size: 14px;
+  color: #111;
+  box-sizing: border-box;
+}
+
+/*공통속성 코드 : container*/
+.container{
+  min-width: 900px;
+  width: 850px;
+  margin: 0 auto; /*가운데정렬*/
+  box-sizing: border-box;
+}
+
+/* header:상단메뉴 */
+header{
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
+}
+header > .container{
+  padding: 24px 10px;
+  display: flex;
+  justify-content: space-between; /*각 요소 양끝에 배치(주축)*/
+  align-items: center;  /*교차축 가운데정렬*/
+}
+.logo{
+  font-size: 36px;
+  height: 20px;
+  transform: translateY(-15px);
+  letter-spacing: 2px;  /*자간 넓히기(가독성을 위해)*/
+}
+nav{
+  display: flex;  /*일열로 나란히 정렬*/
+}
+nav > ul{
+  display: flex;
+}
+.top_gnb > li{
+  margin: 0 35px;
+  transform: translateY(2px); /* line-height: 20px; 와 같은 의미 */
+}
+
+/*section : banner 부분*/
+section > .banner{
+  width: 100%;
+  height: 650px;
+  background: url(../image/자동차배경이미지1.jpg) center/cover;
+  position: relative; /*유령의 집화*/
+}
+section .banner-Menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section .box{
+  position: absolute;
+  width: 180px;
+  height: 270px;
+  text-align: center;
+  bottom: -15%;
+  color: white;
+  opacity: 0.9;
+}
+section .box:first-child{
+  left: 28%;
+  background: url(../image/bg_image1.jpg) center/cover;
+  /*background-color: #21B5DE;*/
+}
+section .box:nth-child(2){
+  left: 38%;
+  background: url(../image/bg_image5.jpg) center/cover;
+  /*background-color: #2179DE;*/
+}
+section .box:nth-child(3){
+  right: 28%;
+  background: url(../image/bg_image3.jpg) center/cover;
+  /*background-color: #2e189c;*/
+}
+section .box:nth-child(4){
+  right: 38%;
+  background: url(../image/bg_image6.jpg) center/cover;
+  /*background-color: #213EDE;*/
+}
+
+/*banner-subMenu*/
+section .banner-subMenu{
+  width: 745px;
+  height: 140px;
+  margin: 150px auto 10px;
+  background-color: #2179DE;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+/*텍스트 요소*/
+section .banner-subMenu > .banner_txt  h1{
+  color: white;
+  font-size: 20px;
+}
+/*버튼요소*/
+section > .banner-subMenu > .banner_txt > a{
+  width: 115px;
+  height: 20px;
+  display: block;
+  background-color: white;
+  color: #2179DE;
+  border-radius: 30px;
+  padding: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*구분선 추가*/
+section .banner-subMenu > div:nth-of-type(2){
+  border-left: 1px solid #999;
+  padding-left: 100px;
+}
+
+/*이벤트 영역*/
+#eventBox{
+  width: 100%;
+  height: 70px;
+  background-color: #2179DE;
+  box-shadow: 0 1px 2px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
+  margin: 0 auto;
+}
+#eventBox .event{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+#eventBox .event i{
+  font-size: 50px;
+}
+#eventBox .event a{
+  margin-top: 5px;
+}
+#eventBox > .container > .event p{
+  font-size: 20px;
+  margin: 5px;
+}
+#eventBox > .container > .event b{
+  color: gold;
+}
+
+/*section : hotDeal부분*/
+#hotDeal{
+  width: 100%;
+  height: 430px;
+  background-color: #333;
+  margin: 0 auto;
+}
+.hotDeal-all{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+#hotDeal h1{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+#hotDeal .hotDeal-img{
+  border: 2px solid white;
+  width: 185px;
+  height: 280px;
+}
+#hotDeal .hotDeal-img:nth-of-type(1){
+  background: url(../image/자동차1\(배경제거\).png) center/cover;
+}
+#hotDeal .hotDeal-img:nth-of-type(2){
+  background: url(../image/자동차2\(배경제거.png) center/cover;
+}
+#hotDeal .hotDeal-img:nth-of-type(3){
+  background: url(../image/자동차3\(배경제거.png) center/cover;
+}
+#hotDeal .hotDeal-img:nth-of-type(4){
+  background: url(../image/자동차4\(배경제거.png) center/cover;
+}
