@@ -28,6 +28,7 @@ body{
 /* header:상단메뉴 */
 header{
   width: 100%;
+  min-width: 900px;
   background-color: white;
   box-shadow: 0 1px 2px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
 }
@@ -65,17 +66,18 @@ nav > ul{
   font-size: 13px;
 }
 
+section{
+  margin-bottom: 50px;
+  min-width:900px;
+}
+/*---------------------------------------------------------------*/
 /*section : banner 부분*/
 section > .banner{
   width: 100%;
-  height: 650px;
+  min-width: 900px;
+  height: 700px;
   background: url(../image/자동차배경이미지1.jpg) center/cover;
   position: relative; /*유령의 집화*/
-}
-section .banner-Menu{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 section .box{
@@ -83,36 +85,60 @@ section .box{
   width: 180px;
   height: 270px;
   text-align: center;
-  bottom: -15%;
+  bottom: -20%;
   color: white;
   opacity: 0.9;
   box-sizing: border-box;
   padding: 15px;
 }
+section .banner .box h1{
+  margin: 10px;
+}
+section .banner .box i{
+  margin: 10px;
+  font-size: 45px;
+}
+section .banner .box p{
+  margin: 10px;
+  letter-spacing: 3px;
+}
+section .banner .box a{
+  display: block;
+  margin: 30px 10px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+}
+/*마우스이벤트 효과*/
+section .banner .box a:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*각 요소 위치정렬*/
 section .box:first-child{
-  left: 28%;
+  left: calc(50% - 400px);
   background: url(../image/bg_image1.jpg) center/cover;
   /*background-color: #21B5DE;*/
 }
 section .box:nth-child(2){
-  left: 38%;
+  left: calc(50% - 220px);
   background: url(../image/bg_image5.jpg) center/cover;
   /*background-color: #2179DE;*/
 }
 section .box:nth-child(3){
-  right: 28%;
+  right: calc(50% - 220px);
   background: url(../image/bg_image3.jpg) center/cover;
   /*background-color: #2e189c;*/
 }
 section .box:nth-child(4){
-  right: 38%;
+  right: calc(50% - 400px);
   background: url(../image/bg_image6.jpg) center/cover;
   /*background-color: #213EDE;*/
 }
 
 /*banner-subMenu*/
 section .banner-subMenu{
-  width: 745px;
+  width: 800px;
   height: 140px;
   margin: 150px auto 10px;
   background-color: #2179DE;
@@ -121,8 +147,12 @@ section .banner-subMenu{
   align-items: center;
   border-radius: 20px;
   padding: 5px 20px;
+  box-sizing: border-box;
 }
-/*텍스트 요소*/
+section .banner-subMenu > .banner_txt{
+  width:50%;
+  box-sizing: border-box;
+}
 section .banner-subMenu > .banner_txt  h1{
   color: white;
   font-size: 20px;
@@ -139,11 +169,10 @@ section > .banner-subMenu > .banner_txt > a{
   margin-top: 20px;
   text-align: center;
 }
-
 /*구분선 추가*/
 section .banner-subMenu > div:nth-of-type(2){
   border-left: 1px solid #999;
-  padding-left: 100px;
+  padding-left: 20px;
 }
 
 /*이벤트 영역*/
@@ -156,24 +185,30 @@ section .banner-subMenu > div:nth-of-type(2){
 }
 #eventBox .event{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   color: white;
 }
-#eventBox .event i{
-  font-size: 50px;
+#eventBox .event img{
+  width: 160px;
 }
 #eventBox .event a{
-  margin-top: 5px;
+  display: block;
+  margin: 10px 0;
+}
+/*마우스이벤트 효과*/
+#eventBox .event a:hover{
+  color: gold;
+  font-weight: bold;
 }
 #eventBox > .container > .event p{
   font-size: 20px;
-  margin: 5px;
+
 }
 #eventBox > .container > .event b{
   color: gold;
 }
-
+/*---------------------------------------------------------------*/
 /*section : hotDeal부분*/
 #hotDeal{
   width: 100%;
@@ -187,18 +222,30 @@ section .banner-subMenu > div:nth-of-type(2){
   align-items: center;
   gap: 10px;
 }
-#hotDeal h1{
+/*영역 제목태그*/
+#hotDeal > .container > h1{
   margin: 0 auto;
   text-align: center;
   padding-top: 40px;
   color: white;
   font-size: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
+/*이미지요소 안 텍스트*/
 #hotDeal .hotDeal-img{
   border: 2px solid white;
   width: 185px;
-  height: 280px;
+  height: 285px;
+}
+#hotDeal .hotDeal-img h1{
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 93%;
+}
+#hotDeal .hotDeal-img p{
+  color: #ccc;
+  text-align: center;
 }
 #hotDeal .hotDeal-img:nth-of-type(1){
   background: url(../image/자동차1\(배경제거\).png) center/cover;
@@ -211,4 +258,92 @@ section .banner-subMenu > div:nth-of-type(2){
 }
 #hotDeal .hotDeal-img:nth-of-type(4){
   background: url(../image/자동차4\(배경제거.png) center/cover;
+}
+/*좌,우 표시 아이콘*/
+#hotDeal .hotDeal-all i{
+  font-size: 40px;
+}
+/*---------------------------------------------------------------*/
+/*section : badge*/
+#badge{
+  min-width: 900px;
+  width: 100%;
+  height: 340px;
+  background-color: #f8f8f8;
+}
+#badge .badge{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*badge-box 공통속성*/
+#badge .badge .badge-box{
+  width: 300px;
+  height: 225px;
+  margin: 55px 10px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+/*각 요소 배경색 설정*/
+#badge .badge .badge-box:nth-of-type(1){
+  background-color: #428bdf;
+}
+#badge .badge .badge-box:nth-of-type(2){
+  background-color: #445be0;
+}
+#badge .badge .badge-box:nth-of-type(3){
+  background-color: #4933b9;
+}
+/*텍스트 설정*/
+#badge .badge .badge-box h1{
+  margin: 20px 0;
+}
+
+/*버튼요소*/
+#badge .badge .badge-box button{
+  border: 0;
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(231, 228, 228);
+  float: right;
+  padding: 10px;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+/*마우스이벤트 효과*/
+#badge .badge .badge-box button:hover{
+  font-size: 15px;
+}
+/*---------------------------------------------------------------*/
+/*footer*/
+footer{
+  width: 100%;
+  min-width: 900px;
+  height: 130px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
+}
+footer .fbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+footer h1{
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+}
+footer .fbox .footer-txt h2{
+  font-size: 15px;
+  font-weight: normal;
+}
+footer .fbox .footer-icon i{
+  font-size: 25px;
+  margin: 5px;
 }
