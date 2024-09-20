@@ -1,8 +1,8 @@
 /*폰트*/
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
-  font-weight: normal;
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -11,7 +11,7 @@
 ul, li{list-style: none;}
 a{text-decoration: none; color: inherit;}
 body{
-  font-family: 'GangwonEduPowerExtraBoldA';
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   color: #111;
   box-sizing: border-box;
@@ -43,15 +43,26 @@ header > .container{
   transform: translateY(-15px);
   letter-spacing: 2px;  /*자간 넓히기(가독성을 위해)*/
 }
+.logo span{
+  color: #213EDE;
+  font-weight: bold;
+  line-height: 1.5;
+}
 nav{
   display: flex;  /*일열로 나란히 정렬*/
 }
 nav > ul{
   display: flex;
 }
+
 .top_gnb > li{
   margin: 0 35px;
   transform: translateY(2px); /* line-height: 20px; 와 같은 의미 */
+}
+.top_gnb .tel{
+  color: #213EDE;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 /*section : banner 부분*/
@@ -75,6 +86,8 @@ section .box{
   bottom: -15%;
   color: white;
   opacity: 0.9;
+  box-sizing: border-box;
+  padding: 15px;
 }
 section .box:first-child{
   left: 28%;
