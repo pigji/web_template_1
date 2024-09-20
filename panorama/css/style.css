@@ -1,0 +1,215 @@
+/*구글폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/*초기화*/
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+body{
+  font: 17px/1.4 "Orbitron";
+  letter-spacing: 1px; 
+  color: #ddd;
+  background-color: #000;
+}
+
+/*전체 영역*/
+.wrap{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  perspective: 1300px;  /*깊이감을 1300px로 설정*/
+}
+/*비디오영상 설정*/
+.wrap > video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /*영상이 해당 영역에 꽉차도록 설정*/
+  position: fixed;
+  opacity: 0.5;
+}
+.wrap #circle{
+  width: 600px;
+  height: 800px;
+  position: absolute;
+  top: calc(50% - 400px);
+  left: calc(50% - 300px);
+  transform-style: preserve-3d; /*입체적인 공간에 요소를 배치하기 위해 설정*/
+}
+
+/*article : 공통속성*/
+.wrap > #circle article{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backface-visibility: hidden;  /*뒷면이 안보이도록 설정(다른 요소를 가리지 않게 하도록)*/
+}
+/*h1 제목태그 설정*/
+.wrap #circle article h1{
+  position: absolute;
+  left: 0; top: 0;
+  font-size: 30px;
+  opacity: 0;
+  transition: all .5s;
+}
+/*마우스이벤트 효과*/
+.wrap #circle article:hover h1{
+  top: -60px;
+  opacity: 1;
+}
+
+.wrap #circle article .inner{
+  width: 100%;
+  height: 100%;
+}
+.wrap #circle article .inner > div{
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 50px;
+  position: relative;
+  opacity: 0.7; /*반투명하게 설정*/
+  overflow: hidden; /*넘가는 부분 가려줌*/
+  cursor: pointer;
+  transition: all .5s;
+}
+/*마우스이벤트 효과*/
+.wrap #circle article .inner > div:hover{
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/*제목태그&아이콘 설정*/
+.wrap #circle article .inner > div h2,
+.wrap #circle article .inner > div i{
+  transition: all .5s;
+}
+/*마우스이벤트 효과*/
+.wrap #circle article .inner > div:hover h2{
+  color: lightcyan;
+  text-shadow: 0 0 10px aqua;
+}
+.wrap #circle article .inner > div:hover i{
+  color: lightcyan;
+  text-shadow: 0 0 10px aqua;
+  transform: scale(1.2);
+}
+/*----------------------------------------------------------*/
+/*face1 : Co Company*/
+.wrap #circle .face1 .inner{
+  display: flex;
+  flex-wrap: wrap;  /*줄바꿈*/
+  justify-content: space-between; /*주축 배치*/
+  align-content: space-between; /*교차축 간격 일정하게 배치*/
+}
+.wrap #circle .face1 .inner > div{
+  width: 290px;
+  height: 254px;
+  text-align: center;
+}
+.wrap #circle .face1 .inner > div i{
+  font-size: 100px;
+  opacity: 0.7;
+}
+.wrap #circle .face1 .inner > div h2{
+  margin-top: 20px;
+  letter-spacing: 2px;  /*자간 넓히기*/
+}
+/*----------------------------------------------------------*/
+/*face2 : What's New*/
+.wrap #circle .face2 .inner > div img{
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.wrap #circle .face2 .inner > div h3{
+  color: white;
+  margin-bottom: 20px;
+}
+.wrap #circle .face2 .inner > div p{
+  font: 18px/1.3 Arial;
+  color: #ccc;
+}
+/*----------------------------------------------------------*/
+/*face3 : Members*/
+.wrap #circle .face3 .inner > div{
+  width: 100%;
+  height: 253px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap #circle .face3 .inner > div .pic{ /*프로필 이미지영역*/
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.wrap #circle .face3 .inner > div:nth-of-type(1) .pic{  /*프로필 이미지*/
+  background-image: url(../images/member1.jpg);
+}
+.wrap #circle .face3 .inner > div:nth-of-type(2) .pic{ 
+  background-image: url(../images/member2.jpg);
+}
+.wrap #circle .face3 .inner > div:nth-of-type(3) .pic{ 
+  background-image: url(../images/member3.jpg);
+}
+.wrap #circle .face3 .inner > div .con{
+  width: 340px;
+}
+.wrap #circle .face3 .inner > div .con h2{
+  color: white;
+}
+.wrap #circle .face3 .inner > div .con p{
+  font: 18px/1.3 Arial;
+  margin-top: 20px;
+}
+.wrap #circle .face3 .inner > div .con span{
+  font-size: 12px;
+  color: aqua;
+  float: right;
+  margin-top: 30px;
+}
+/*----------------------------------------------------------*/
+/*face4 : Advertisement*/
+.wrap #circle .face4 .inner > div:nth-of-type(1){ /*비디오요소 영역*/
+  width: 100%;
+  height: 600px;
+  margin-bottom: 20px;
+}
+.wrap #circle .face4 .inner > div:nth-of-type(1) video{ /*비디오요소*/
+  width: 100%;
+  border: 1px solid white;
+  margin-bottom: 30px;
+}
+.wrap #circle .face4 .inner > div p{
+  font: 16px/1.3 Arial;
+}
+.wrap #circle .face4 .inner > div:nth-of-type(2){ /*Information영역*/
+  width: 100%;
+  height: 180px;
+}
+.wrap #circle .face4 .inner > div:nth-of-type(2) .txt{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap #circle .face4 .inner > div:nth-of-type(2) .txt em{
+  font-size: 12px;
+  color: #ccc;
+}
+/*----------------------------------------------------------*/
+/*face5*/
+/*----------------------------------------------------------*/
+/*face6*/
+/*----------------------------------------------------------*/
+/*face7*/
+/*----------------------------------------------------------*/
+/*face8*/
