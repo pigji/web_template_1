@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>breakpoint</title>
+
+  <style>
+   *{box-sizing: border-box;}
+
+    /*클래스 이름이 "col-"으로 시작하는 모든 요소를 선택*/
+    [class*="col-"]{padding:15px;}
+
+    body{
+      font-family: Arial, "맑은 고딕";
+    }
+
+    .header{
+      background-color:#93c;
+      color:#fff;
+      padding:15px;
+    }
+
+    .row{
+      display:flex;
+      flex-wrap:wrap;
+    }
+
+    .menu ul{
+      list-style: none;
+      margin:0; 
+      padding:0;
+    }
+    .menu li{
+      padding:8px;
+      margin-bottom:7px;
+      background-color:#33b5e5;
+      color:#fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.24);
+    }
+    /*마우스이벤트 효과*/
+    .menu li:hover{
+      background-color: #09c;
+      cursor:pointer;
+    }
+
+    .aside{
+      background-color:#33b5e5;
+      padding:15px;
+      color:#fff;
+      text-align: center;
+      font-size:14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.24);
+    }
+
+    .footer{
+      background-color:#09c;
+      color:#fff;
+      text-align: center;
+      font-size:12px;
+      padding:15px;
+    }
+
+    /*모바일 폰*/
+    [class*="col-"]{width:100%;}
+    
+    /*중간점(600px 이상일 경우 적용)*/
+    @media only screen and (min-width:600px){
+      /*태블릿*/
+      .col-s-1{width:8.3333%;}
+      .col-s-2{width:16.6666%;}
+      .col-s-3{width:25%;}
+      .col-s-4{width:33.3333%;}
+      .col-s-5{width:41.6666%;}
+      .col-s-6{width:50%;}
+      .col-s-7{width:58.3333%;}
+      .col-s-8{width:66.6666%;}
+      .col-s-9{width:75%;}
+      .col-s-10{width:83.3333%;}
+      .col-s-11{width:91.6666%;}
+      .col-s-12{width:100%;}
+    }
+
+    /*데스크탑(768px 이상일 경우 적용)*/
+    @media only screen and (min-width:768px){
+      .col-1{width:8.3333%;}
+      .col-2{width:16.6666%;}
+      .col-3{width:25%;}
+      .col-4{width:33.3333%;}
+      .col-5{width:41.6666%;}
+      .col-6{width:50%;}
+      .col-7{width:58.3333%;}
+      .col-8{width:66.6666%;}
+      .col-9{width:75%;}
+      .col-10{width:83.3333%;}
+      .col-11{width:91.6666%;}
+      .col-12{width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Chania</h1>
+  </div>
+  <div class="row">
+    <div class="menu col-3 col-s-3">
+      <ul>
+        <li>The Flight</li>
+        <li>The City</li>
+        <li>The Island</li>
+        <li>The Food</li>
+      </ul>
+    </div>
+    <div class="col-6 colo-s-9">
+      <h1>The City</h1>
+      <p>
+        하니아는 크레타 섬에 있는 하니아 지역의 수도입니다.
+        도시는 구시가지와 현대 도시의 두 부분으로 나눌 수 있습니다
+      </p>
+    </div>
+    <div class="col-3 col-s-12">
+      <div class="aside">
+        <h2>What?</h2>
+        <p>하니아는 크레타 섬에 있는 도시입니다</p>
+        <h2>Where?</h2>
+        <p>크레타는 지중해의 그리스 섬입니다</p>
+        <h2>How?</h2>
+        <p>유럽 각지에서 하니아 공항에 도착할 수 있습니다</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>브라우저 창 크기를 조정하여 내용이 크기 조정에 어떻게 반응하는지 확인 하십시오.</p>
+  </div>
+</body>
+</html>
