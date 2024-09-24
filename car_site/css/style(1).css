@@ -318,15 +318,15 @@ section .banner-subMenu > div:nth-of-type(2){
 #badge .badge .badge-box button:hover{
   font-size: 15px;
 }
-/*---------------------------------------------------------------*/
 /*footer*/
 footer{
   width: 100%;
   min-width: 900px;
   height: 130px;
   margin: 0 auto;
+  padding: 20px;
   background-color: white;
-  box-shadow: 0 1px 2px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
+  box-shadow: 0 1px 4px rgba(8, 30, 77, 0.3);  /*연한 파란색으로 반투명하게 그림자 설정*/
 }
 footer .fbox{
   display: flex;
