@@ -67,7 +67,6 @@ nav > ul{
 }
 
 section{
-  margin-bottom: 50px;
   min-width:900px;
 }
 /*---------------------------------------------------------------*/
@@ -318,6 +317,7 @@ section .banner-subMenu > div:nth-of-type(2){
 #badge .badge .badge-box button:hover{
   font-size: 15px;
 }
+/*---------------------------------------------------------------*/
 /*footer*/
 footer{
   width: 100%;

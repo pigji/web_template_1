@@ -20,7 +20,7 @@ body{
 /*공통속성 코드 : container*/
 .container{
   min-width: 900px;
-  width: 850px;
+  width: 900px;
   margin: 0 auto; /*가운데정렬*/
   box-sizing: border-box;
 }
@@ -88,7 +88,7 @@ section .content h2{  /*제목태그 : 모델라인업*/
 }
 section .content .car-search{ /*차량검색 박스*/
   width: 100%;
-  border: 1px solid red;
+  box-shadow: 2px 2px 5p  ;
   height: 230px;
 }
 section .content .car-search p{
@@ -138,14 +138,15 @@ section .car-box .car-gnb{
   padding: 10px 5px;
 }
 section .car-box .car-gnb .box{
-  width: 300px;
-  height: 250px;
-  border: 1px solid black;
+  width: 360px;
+  height: auto;
+  border: 1px solid #f3f3f3;
   margin-bottom: 40px;
 }
 section .car-box .car-gnb .box img{
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: auto;
+  text-align: center;
   transform: scale(1);
   transition: transform .5s;
 }
@@ -154,7 +155,11 @@ section .car-box .car-gnb .box img:hover{
   transform: scale(1.2);
   transition: transform .5s;
 }
-
+/*텍스트 정렬*/
+section .car-box .car-gnb .box h1,
+section .car-box .car-gnb .box p{
+  text-align: center;
+}
 
 
 /*---------------------------------------------------------------*/
