@@ -15,7 +15,6 @@ window.addEventListener("load", ()=>{
   //for(let el = 0; el < btns.length; el++){} -> 이렇게 작성하면 동작은 하지막 문제가 나타남
   
   //btns배열의 요소를 하나씩 뽑아서 갯수만큼 반복문을 실행
-  //btns배열의 요소를 하나씩 뽑아서 갯수만큼 반복문을 실행
   for(let el of btns){
     // console.log(el)
     //각 버튼 요소에 클릭 이벤트를 연결
