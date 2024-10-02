@@ -147,8 +147,22 @@ main section article div > .M-title > h2{
   font-size: 18px;
 }
 /*연령대 표시*/
-main section article div > .M-title > h2:nth-of-type(1){
+main section article div > .M-title > .years-M-fit{ /*15세*/
   background-color: orange;
+  width: 35px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+main section article div > .M-title > .years-M-twe{ /*12세*/
+  background-color: yellow;
+  width: 35px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+main section article div > .M-title > .years-M-all{ /*전체연령대*/
+  background-color: green;
   width: 35px;
   height: auto;
   border-radius: 5px;

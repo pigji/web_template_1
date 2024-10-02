@@ -9,7 +9,7 @@ a{text-decoration: none; color: inherit;}
 
 /*공통속성 : container*/
 .container{
-  min-width: 1000px;
+  max-width: 1200px;
   width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -46,11 +46,6 @@ header > .bg-color{
 padding: 0 40px;
 margin-bottom: 15px;
 font-size: 15px;
-}
-.list img{
-  width: 70px;
-  height: 70px;
-  padding: 0 170px;
 }
 /*마우스이벤트 효과*/
 .list li:hover, .list img:hover{
@@ -131,68 +126,28 @@ font-size: 15px;
 }
 /*--------------------------------------------------*/
 /*section : 혜택 및 이미지 전체 부분*/
+/**/
 section{
   width: 100%;
 }
-
-/*혜택 및 이미지 부분*/
-section .boon{
+/* 이미지 + 텍스트 부분*/
+/* section .boon{
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section .boon > .txt{
+  border: 2px solid yellow;
+} */
+/*추첨 이벤트*/
+/* section .boon > .txt > .bImg-box > .b-event-box{
   display: flex;
   justify-content: flex-start;
-  margin-top: 120px;
-}
-/*티켓이미지 요소*/
-section .boon > img{
-  width: 320px;
-  height: 320px;
-  margin-top: 50px;
-  margin-left: 15px;
-}
-/*텍스트 부분*/
-section .boon > .txt{
-  margin-bottom: 50px;
-}
-section .boon > .txt > h1{
-  font-family: "Oswald";
-  color: #351f66;
-  margin-bottom: 30px;
-  font-size: 35px;
-}
-section .boon > .txt > h3{
-  font-size: 14px;
-}
-section .boon > .txt > p{
-  font-weight: 500;
-  font-size: 16px;
-}
+  align-items: center;
+} */
 
-.bImg-box{
-  display: flex;
-}
-.boon-img > img{
-  position: absolute;
-  bottom: -465px;
-}
-/*공중에 띄운 이미지요소*/
-.boon-img > .img1{
-  width: 450px;
-  height: 180px;
-  border-radius: 10px;
-  right: calc(65% - 190px);
-}
-.boon-img > .img2{
-  width: 190px;
-  height: 180px;
-  border-radius: 10px;
-  right: calc(50% - 110px);
-}
-.boon-img img:nth-of-type(3){
-  width: 410px;
-  height: 510px;
-  border-radius: 10px;
-  right: calc(27% - 100px);
-  bottom: calc(10% - 560px);
-}
+
 /*--------------------------------------------------*/
 /*section : */
 section > .bg-color1{
@@ -209,6 +164,7 @@ section .event-menu{
 }
 section .event-menu > .box{
   padding-top: 160px;
+
 }
 /*마우스이벤트 효과*/
 section .event-menu > .box:hover{
@@ -275,7 +231,6 @@ section .curation > button:hover{
   height: 50px;
   color: #fff;
   border-radius: 5px;
-  cursor: pointer;
 }
 .introduction > .iMovie-1 > .iBtn > button:nth-of-type(1){
   border: 2px solid #fff;
@@ -368,12 +323,14 @@ section > .bg-color3 .user-menu > .box{
 }
 /*아이콘*/
 section > .bg-color3 .user-menu > .box > i{
+  color: #037b94;
   font-size: 40px;
 }
 /*텍스트*/
 section > .bg-color3 .user-menu > .box > h2{
   font-size: 20px;
   margin-top: 10px;
+  color: #555;
 }
 section > .bg-color3 .user-menu > .box:hover{
   text-decoration: underline;
