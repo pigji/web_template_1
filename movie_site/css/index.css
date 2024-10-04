@@ -126,36 +126,112 @@ font-size: 15px;
 }
 /*--------------------------------------------------*/
 /*section : 혜택 및 이미지 전체 부분*/
-/**/
+
 section{
   width: 100%;
 }
-/* 이미지 + 텍스트 부분*/
-/* section .boon{
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-section .boon > .txt{
-  border: 2px solid yellow;
-} */
-/*추첨 이벤트*/
-/* section .boon > .txt > .bImg-box > .b-event-box{
+section .boon{
+  margin-top: 50px;
   display: flex;
   justify-content: flex-start;
+}
+section .boon > .txt{
+  /* border: 2px solid red; */
+  width: 680px;
+  position:relative;
+}
+section .boon > .txt .bImg-box{
+  display: flex;
+  justify-content: space-between;
+}
+section .boon > .txt .bImg-box > .img > img{
+  margin-top: 70px;
+  width: 90%;
+  height: 80%;
+
+}
+/*텍스트 부분*/
+section .boon > .txt .bImg-box > .box-inner{
+  /* border: 2px solid yellow; */
+  width: 60%;
+}
+section .boon > .txt .bImg-box > .box-inner > h1{
+  font-size: 36px;
+}
+section .boon > .txt .bImg-box > .box-inner > h3{
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 30px;
+}
+section .boon > .txt .bImg-box > .box-inner > p{
+  margin-bottom: 20px;
+}
+
+/*룩백 이미지*/
+section .boon > .boon-img{
+  margin-left: 20px;
+}
+section .boon > .boon-img > img{
+  position: absolute;
+  transform:translateY(20px);
+  border-radius: 5px;
+  width: 400px;
+  z-index: 10;
+}
+
+
+/*할인+이벤트 이미지*/
+section .boon > .txt > .b-event-box{
+  display: flex;
   align-items: center;
-} */
+  width: 100%;
+  position: absolute;
+  bottom: -170px;
+}
+section .boon > .txt > .b-event-box > img{
+  width: 470px;
+  height: 180px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  z-index: 10;
+}
+section .boon > .txt > .b-event-box > img:nth-of-type(2){
+  width: 200px;
+  height: 180px;
+}
+
+/*dot버튼*/
+section .boon > .txt .dot{
+  position:absolute;
+  width:50%;
+  transform:translateY(-50px);
+  display:flex;
+  justify-content: center;
+}
+section .boon > .txt .dot span{
+  display:block;
+  width:10px; height:10px;
+  border:1px solid #000;
+  /* background-color:#000; */
+  border-radius: 50%;
+  margin:0 10px;
+  cursor:pointer;
+}
+
+section .boon > .txt .dot span.on{
+  background-color: #000;
+}
+
 
 
 /*--------------------------------------------------*/
 /*section : */
-section > .bg-color1{
-  background-color: #503396;
-  width: 100%;
-  height: 330px;
-}
 section .event-menu{
+  width: 100%;
+  height: 300px;
+  background-color: #503396;
+  margin-top: 85px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -163,8 +239,7 @@ section .event-menu{
   text-align: center;
 }
 section .event-menu > .box{
-  padding-top: 160px;
-
+  padding-top: 50px;
 }
 /*마우스이벤트 효과*/
 section .event-menu > .box:hover{
@@ -172,10 +247,11 @@ section .event-menu > .box:hover{
 }
 section .event-menu > .box > h2{
   font-size: 14px;
+  font-weight: normal;
 }
 /*아이콘*/
 section .event-menu > .box > i{
-  font-size: 50px;
+  font-size: 35px;
   margin-bottom: 15px;
 }
 
@@ -231,6 +307,7 @@ section .curation > button:hover{
   height: 50px;
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 .introduction > .iMovie-1 > .iBtn > button:nth-of-type(1){
   border: 2px solid #fff;

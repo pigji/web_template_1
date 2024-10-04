@@ -99,29 +99,47 @@ main .event-box{
   margin-top: 50px;
 }
 
-/*추천 이벤트*/
-main .movie-pick{
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: space-evenly
-}
-main .movie-pick > .box{
-  width: 220px;
-  height: 320px;
-  border: 1px solid #ddd;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-main .movie-pick > .box > img{
+
+/**/
+main .event-box{
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  margin-top: 50px;
 }
-main .movie-pick > .box > p{
-  margin: 10px 0;
+main .event-box::after{ /*클리어픽스 핵*/
+  content: "";
+  display: block;
+  clear: both;
 }
-main .movie-pick > .box > p:nth-of-type(2){
-  font-size: 12px;
-  color: #666;
+main section article{
+  border: 1px solid red;  /*영역 확인용*/
+  margin-top: 30px;
+  width: 275px;
+  height: auto;
+  float:left;
+  box-sizing: border-box;
+}
+main section article > .movie-pick{
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+main section article > .movie-pick > .box{
+  width: 100%;
+  height: 365px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+/*이미지*/
+main section article div > img{
+  width: 100%;
+  height: 265px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+/*텍스트*/
+main section article > .movie-pick > .box > p{
+  padding-top: 10px;
+  font-size: 14px;
 }
