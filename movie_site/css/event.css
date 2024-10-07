@@ -87,6 +87,7 @@ main ul > li:hover{
 main .suggestion{
   margin-top: 40px;
 }
+/*텍스트*/
 main .suggestion > .txt{
   display: flex;
   justify-content: space-between;
@@ -95,12 +96,15 @@ main .suggestion > .txt{
 main .suggestion > .txt > p{
   font-size: 14px;
 }
+main .suggestion > .txt > p:hover{
+  text-decoration: underline;
+}
 main .event-box{
   margin-top: 50px;
 }
 
 
-/**/
+/*section : 이벤트*/
 main .event-box{
   width: 100%;
   margin-top: 50px;
@@ -111,7 +115,7 @@ main .event-box::after{ /*클리어픽스 핵*/
   clear: both;
 }
 main section article{
-  border: 1px solid red;  /*영역 확인용*/
+ /* border: 1px solid red;  영역 확인용*/
   margin-top: 30px;
   width: 275px;
   height: auto;
@@ -130,6 +134,7 @@ main section article > .movie-pick > .box{
   height: 365px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  cursor: pointer;
 }
 /*이미지*/
 main section article div > img{

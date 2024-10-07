@@ -59,3 +59,105 @@ font-size: 16px;
 }
 /*--------------------------------------------------*/
 /*main 부분*/
+main{
+  width: 100%;
+}
+main > .container > h1{
+  margin: 50px 0 20px;
+  font-size: 24px;
+}
+main ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+main ul > li{
+  border: 1px solid #ccc;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  padding-top: 8px;
+  box-sizing: border-box;
+}
+/*마우스이벤트 효과*/
+main ul > li:hover{
+  color: #503396;
+}
+
+
+/*스토어 목록표시*/
+main .store_box{
+  width: 100%;
+  margin-top: 50px;
+}
+main .store_box::after{ /*클리어픽스 핵*/
+  content: "";
+  display: block;
+  clear: both;
+}
+/*각 목록박스*/
+main section article{
+   /*border: 1px solid red;  영역 확인용*/
+   width: 240px;
+   height: 435px;
+   margin: 10px;
+   float:left;
+   box-sizing: border-box;
+   cursor: pointer;
+  }
+  main section article > .box{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+ }
+ /*이미지요소*/
+main section article > .box > img{
+  width: 230px;
+  height: auto;
+  text-align: center;
+  background-color: #eee;
+}
+/*판매상품 제목태그*/
+main section article > .box > .tit{
+  /*border: 1px solid red;  영역 확인용*/
+  height: 90px;
+}
+main section article > .box > .tit > h2{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+main section article > .box > .tit > p{
+  font-size: 12px;
+}
+
+/*가격표시 텍스트*/
+section article > .box > .txt{
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  padding-top: 10px;
+  text-align: left;
+  padding-left: 20px;
+}
+section article > .box > .txt > p{
+  text-decoration: line-through;
+}
+section article > .box > .txt > .txt_price > h2{
+  color: #503396;
+  padding-top: 5px;
+}
+section article > .box > .txt > .txt_price > p{
+  text-align: right;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+/*설명글이 없거나 가격할인이 없는 부분*/
+main section article:nth-of-type(4) > .box > .txt > .txt_price{
+  padding-top: 20px;
+}
+
+/*foode : 팝콘, 음료 등 부분*/
