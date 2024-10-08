@@ -74,7 +74,7 @@ main ul{
 }
 main ul > li{
   border: 1px solid #ccc;
-  width: 250px;
+  width: 100%;
   height: 40px;
   text-align: center;
   padding-top: 8px;
@@ -98,33 +98,44 @@ main .store_box::after{ /*클리어픽스 핵*/
 }
 /*각 목록박스*/
 main section article{
-   /*border: 1px solid red;  영역 확인용*/
+   border: 1px solid red;  /*영역 확인용*/
    width: 240px;
    height: 435px;
    margin: 10px;
    float:left;
    box-sizing: border-box;
    cursor: pointer;
-  }
-  main section article > .box{
+}
+
+main section article > .box{
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   text-align: center;
- }
+  /* padding: 10px; */
+}
+/*마우스이벤트 효과*/
+main section article > .box:hover{
+  border: 1px solid #503396;
+}
+
  /*이미지요소*/
 main section article > .box > img{
-  width: 230px;
+  width: 100%;
   height: auto;
   text-align: center;
   background-color: #eee;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 /*판매상품 제목태그*/
 main section article > .box > .tit{
   /*border: 1px solid red;  영역 확인용*/
   height: 90px;
+  text-align: left;
+  padding: 0 10px;
 }
 main section article > .box > .tit > h2{
   font-size: 15px;

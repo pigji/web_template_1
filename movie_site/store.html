@@ -10,6 +10,8 @@
   <!--폰트어썸 내 script 코드-->
   <script src="https://kit.fontawesome.com/3223480a48.js" crossorigin="anonymous"></script>
   <!--js-->
+  <script src="js/isotope.js"></script>
+  <script src="js/script.js"></script>
 </head>
 <body>
   <!--상단메뉴 부분-->
@@ -39,15 +41,15 @@
       <h1>스토어</h1>
       <!--분류버튼 추가-->
       <ul>
-        <li class="on"><a href="#">새로운 상품</a></li>
-        <li class="ticket"><a href="#">MOVIE 티켓</a></li>
-        <li class="food"><a href="#">팝콘/음료/굿즈</a></li>
-        <li class="point"><a href="#">포인트몰</a></li>
+        <li class="on"><a href="*">새로운 상품</a></li>
+        <li class="ticket"><a href=".ticket">MOVIE 티켓</a></li>
+        <li class="food"><a href=".food">팝콘/음료/굿즈</a></li>
+        <li class="point"><a href=".point">포인트몰</a></li>
       </ul>
       <!---->
       <section>
         <div class="store_box">
-          <article>
+          <article class="ticket">
             <div class="box">
               <img src="image/프라이빗티켓1.png" alt="">
               <div class="tit">
@@ -63,7 +65,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="ticket">
             <div class="box">
               <img src="image/프라이빗티켓2.png" alt="">
               <div class="tit">
@@ -79,7 +81,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="ticket">
             <div class="box">
               <img src="image/디즈니패키지.png" alt="">
               <div class="tit">
@@ -94,7 +96,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="ticket">
             <div class="box">
               <img src="image/일반관람권.png" alt="">
               <div class="tit">
@@ -108,11 +110,13 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="food">
             <div class="box">
               <img src="image/food판매1.png" alt="">
-              <h2>황태 스틱</h2>
-              <p>황태 스틱</p>
+              <div class="tit">
+                <h2>황태 스틱</h2>
+                <p>황태 스틱1</p>
+              </div>
               <div class="txt">
                 <div class="txt_price">
                   <h2>5,900원</h2>
@@ -120,11 +124,13 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="food">
             <div class="box">
               <img src="image/food판매2.png" alt="">
-              <h2>(특가) 황태 스틱</h2>
-              <p>황태 스틱</p>
+              <div class="tit">
+                <h2>(특가) 황태 스틱</h2>
+                <p>황태 스틱1</p>
+              </div>
               <div class="txt">
                 <p>5,900원</p>
                 <div class="txt_price">
@@ -134,11 +140,13 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="food">
             <div class="box">
               <img src="image/food판매3.png" alt="">
-              <h2>오징어튀김 세트</h2>
-              <p>오징어튀김 + 탄산음료(L)</p>
+              <div class="tit">
+                <h2>오징어튀김 세트</h2>
+                <p>오징어튀김1 + 탄산음료(L)</p>
+              </div>
               <div class="txt">
                 <div class="txt_price">
                   <h2>8,900원</h2>
@@ -146,11 +154,13 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="food">
             <div class="box">
               <img src="image/food판매4.png" alt="">
-              <h2>오징어 튀김</h2>
-              <p>오징어 튀김</p>
+              <div class="tit">
+                <h2>오징어 튀김</h2>
+                <p>오징어 튀김</p>
+              </div>
               <div class="txt">
                 <div class="txt_price">
                   <h2>6,900원</h2>
@@ -158,7 +168,62 @@
               </div>
             </div>
           </article>
-          
+          <article class="point">
+            <div class="box">
+              <img src="image/2D관람쿠폰.png" alt="">
+              <div class="tit">
+                <h2>평일 일반 2D 관람쿠폰</h2>
+                <p>일반/컴포트/더 부티크 전용<br>(월~금 사용가능, 공휴일 제외)</p>
+              </div>
+              <div class="txt">
+                <div class="txt_price">
+                  <h2>9,900 Point</h2>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="point">
+            <div class="box">
+              <img src="image/평일관람쿠폰.png" alt="">
+              <div class="tit">
+                <h2>평일 Dolby Attmos 관람 쿠폰</h2>
+                <p>Dolby Atmos 전용 예매권<br>(월~금 사용가능, 공휴일 제외)</p>
+              </div>
+              <div class="txt">
+                <div class="txt_price">
+                  <h2>10,900 Point</h2>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="point">
+            <div class="box">
+              <img src="image/영화할인쿠폰1.png" alt="">
+              <div class="tit">
+                <h2>영화 4천원 할인쿠폰</h2>
+                <p>일반/컴포트/더 부티크/Dolby Atmos<br>사용 가능</p>
+              </div>
+              <div class="txt">
+                <div class="txt_price">
+                  <h2>2,000 Point</h2>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="point">
+            <div class="box">
+              <img src="image/영화할인쿠폰2.png" alt="">
+              <div class="tit">
+                <h2>영화 4천원 할인쿠폰</h2>
+                <p>일반/컴포트/더 부티크/Dolby Atmos<br>사용 가능</p>
+              </div>
+              <div class="txt">
+                <div class="txt_price">
+                  <h2>1,500 Point</h2>
+                </div>
+              </div>
+            </div>
+          </article>
         </div> <!--store_box-->
       </section>
     </div> <!--container-->
