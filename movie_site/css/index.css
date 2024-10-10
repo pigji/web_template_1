@@ -34,11 +34,16 @@ header > .bg-color{
   padding-top: 10px;
   border-bottom: 1px solid rgba(211, 211, 211, 0.3);
 }
-.list > h1{
-  padding-left: 20px;
-  padding-bottom: 10px;
-  font-size: 50px;
+/*로고*/
+.list > .logo{
+  /*border: 1px solid red;  영역 확인용*/
+  width: 200px;
+  height: 70px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ci/logo-white_new2.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
 .list > ul{
   display: flex;
 }
@@ -360,7 +365,6 @@ section .curation > button:hover{
 /*극장*/
 #cinema .C-box > .theater{
   border: 2px solid pink;
-  background: url(../image/극장안내이미지.avif) center/cover;
   width: 180px;
   height: 180px;
   margin: 10px;
@@ -371,6 +375,27 @@ section .curation > button:hover{
   padding-top: 30px;
   box-sizing: border-box;
 }
+#cinema .C-box > .theater:nth-of-type(1){
+  background: url(../image/극장안내이미지.avif) center/cover;
+}
+#cinema .C-box > .theater:nth-of-type(2){
+  background: url(../image/영화관이미지1.png) center/cover;
+}
+#cinema .C-box > .theater:nth-of-type(3){
+  background: url(../image/영화관이미지2.png) center/cover;
+}
+#cinema .C-box > .theater:nth-of-type(4){
+  background: url(../image/극장안내이미지.avif) center/cover;
+}
+#cinema .C-box > .theater:nth-of-type(5){
+  background: url(../image/영화관이미지4.png) center/cover;
+}
+#cinema .C-box > .theater:nth-of-type(6){
+  background: url(../image/영화관이미지5.png) center/cover;
+}
+
+
+
 #cinema .C-box > .theater > h1{
   font-size: 20px;
 }
@@ -378,14 +403,59 @@ section .curation > button:hover{
 #cinema .C-box > .theater:hover{
   filter: grayscale(0);
 }
-
+/*--------------------------------------------------*/
+/*section : 간단 공지사항 안내 글*/
+section > .line{
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  height: 60px;
+  margin-top: 50px;
+}
+section .container > .content{
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222;
+}
+/*왼쪽 안내글*/
+section .content > .txt{
+  display: flex;
+  align-items: center;
+}
+section .content > .txt > p{
+  font: 13px;
+  margin-left: 20px;
+}
+section .content > .txt > p > b{
+  color: #037b94;
+}
+/*왼쪽 안내글*/
+section .content > .date{
+  display: flex;
+  align-items: center;
+}
+section .content > .date > p{
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+}
+/*버튼요소*/
+section .content > .date > button{
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+section .content > .date > button:hover{
+  text-decoration: underline;
+}
 
 /*--------------------------------------------------*/
 /*section : 공지사항, Q&A*/
 section > .bg-color3{
   margin: 30px 0;
-  padding-top: 60px;
-  background-color: #efefef;  /*영역 확인용*/
+  padding-top: 50px;
 }
 section > .bg-color3 .user-menu{
   display: flex;
@@ -414,6 +484,18 @@ section > .bg-color3 .user-menu > .box > h2{
 }
 section > .bg-color3 .user-menu > .box:hover{
   text-decoration: underline;
+}
+/*--------------------------------------------------*/
+/*section : 절찬상영중 포스터*/
+section{
+  width: 100%;
+  height: 100%;
+}
+section > .poster{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #eef1de;
 }
 /*--------------------------------------------------*/
 /*footer*/

@@ -88,6 +88,10 @@ main .tab > .tab_menu > button{
   padding: 14px 16px;
   /*구분선 추가*/
 }
+.tab_menu button.on{
+  color: #503396;
+  font-weight:bold;
+}
 
 .tab_list{
   text-align: left;
