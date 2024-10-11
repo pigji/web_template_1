@@ -28,13 +28,12 @@ body{
 /*header*/
 header{
   width: 100%;
-  color: #fff;
   font-family: "Odor Mean Chey";
 }
 header > .bg-color{
   width: 100%;
   height: auto;
-  background-color: #0b1330;
+  border-bottom: 1px solid #503396;
 }
 /*메뉴 부분*/
 .list{
@@ -49,6 +48,17 @@ header > .bg-color{
   padding-bottom: 10px;
   font-size: 50px;
 }
+
+/*로고*/
+.list > .logo{
+  /*border: 1px solid red;  영역 확인용*/
+  width: 200px;
+  height: 70px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ci/logo_new2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .list > ul{
   display: flex;
 }
