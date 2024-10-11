@@ -152,26 +152,32 @@ font-size: 16px;
   line-height: 55px;  /*텍스트 가운데정렬*/
 }
 /*--------------------------------------------------*/
-/*section : 멤버십 혜택*/
-.guide > .member-box{
-  border: 1px solid red;
+/*tap메뉴 : 멤버십 혜택*/
+.guide > h2{
   margin-top: 70px;
+  text-align: left;
+  color: #503396;
+  font-size: 20px;
+}
+.guide > .member-box{
+  /* border: 1px solid red;  영역 확인용 */
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 10px;
 }
+
 /*section : 멤버십 혜택*/
 .guide > .member-box > .box{
-  border: 1px solid yellow;
-  width: 480px;
+  width: 500px;
   height: 210px;
   text-align: center;
   padding: 25px 10px;
   box-sizing: border-box;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, .05);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, .07);
   border-radius: 10px;
   margin-bottom: 40px;
   display: flex;
@@ -181,8 +187,13 @@ font-size: 16px;
 /*아이콘*/
 .guide > .member-box > .box > .icon{
   width: 110px;
-  border: 1px solid red;
+  height: 110px;
+  /* border: 1px solid red; */
   margin-left: 20px;
+}
+.guide > .member-box > .box > .icon > i{
+  font-size: 70px;
+  color: #333;
 }
 /*텍스트*/
 .guide > .member-box > .box > .txt{
@@ -205,6 +216,135 @@ font-size: 16px;
 }
 /*--------------------------------------------------*/
 /*section : 포인트사용 안내*/
+.point-use > h2{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #503396;
+  font-size: 20px;
+}
+/*테이블 요소*/
+.point-use > table{
+  width: 100%;
+  height: 100%;
+  border-spacing: 0px;  /*기본여백 제거*/
+}
+/*테이블 제목태그*/
+.point-use > table th{
+  height: 48px;
+  border: 1px solid #d9d9d9;
+  border-width: 0 0 1px 1px;
+  border-top: 1px solid #666;
+  background-color: #fcfcfc;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+}
+.point-use > table td{
+  height: 62px;
+  border-left: none;
+  border: 1px solid #d9d9d9;
+  border-width: 0 0 1px 1px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+.point-use > table td:first-child{
+  border-left: 0;
+}
+/*td에 왼쪽 테두리 제거한 요소에만 따로 테두리 추가*/
+.point-use > table tr > .t-box{
+  border-left: 1px solid #d9d9d9;
+}
+/*--------------------------------------------------*/
+/*포인트사용 안내 글*/
+.point-txt{
+  /* border: 1px solid red; 영역 확인용 */
+  margin-top: 30px;
+  position: relative;
+  padding-left: 8px
+}
+/*텍스트 요소*/
+.point-txt > .box{
+  text-align: left;
+}
+.point-txt > .box > h3{
+  color: #503396;
+  padding: 40px 0 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.point-txt > .box > p{
+  font-size: 14px;
+  color: #222;
+}
+.point-txt > .box > span{
+  /* border: 1px solid yellow; 영역 확인용 */
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  color: #333;
+}
+.point-txt > .box > span:nth-of-type(1){
+  margin-top: 15px;
+}
+.point-txt > .box > span:nth-of-type(2){
+  margin-top: 30px;
+}
+/*--------------------------------------------------*/
+/*tap메뉴 : VIP 혜택*/
+#vip > button{
+  width: 140px;
+  height: 56px;
+  line-height: 55px;
+  border: 1px solid #503396;
+  border-radius: 5px;
+  color: #503396;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 80px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/*vip 슬라이드 배너 이미지*/
+#vip > .vip-banner{
+  width: 100%;
+  height: 462px;
+  margin: 70px 0;
+  padding: 70px 0 0 0;
+  background-color: #f8f8fa;
+}
+/*vip 선정 기준*/
+#vip > .vip-selected{
+  width: 100%;
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.vip-selected{}
+
+.vip-selected > h3{
+  text-align: left;
+  color: #503396;
+}
+.vip-selected > .vip-box{
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+}
+.vip-selected > .vip-box > .v-table{
+  background-color: pink;
+}
+.vip-selected > .vip-box > .v-table img{
+  width: 130px;
+  height: 130px;
+}
+
+
 /*--------------------------------------------------*/
 /*footer*/
 footer > .bg-color4{
@@ -219,9 +359,10 @@ footer .content{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 footer .content > ul{
+  margin-top: 30px;
   display: flex;
 }
 footer .content > ul > li{
@@ -244,6 +385,7 @@ footer .content > p{
   line-height: 28px;
   cursor: pointer;
   font-size: 14px;
+  margin-top: 25px;
 }
 
 /**/
@@ -271,4 +413,5 @@ footer .f-box > .f-menu > .sns{
   color: gray;
   padding-bottom: 25px;
   box-sizing: border-box;
+  cursor: pointer;
 }
