@@ -132,6 +132,7 @@ main section article{
   height: auto;
   float:left;
   box-sizing: border-box;
+  cursor: pointer;
 }
 main section article div{
   width: 100%;

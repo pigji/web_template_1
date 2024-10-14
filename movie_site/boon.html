@@ -11,8 +11,7 @@
     <script src="https://kit.fontawesome.com/3223480a48.js"crossorigin="anonymous"></script>
     <!--js-->
     <script src="js/isotope.js"></script>
-    <script src="js/tapmenu.js" defer></script>
-    <script src="js/login.js" defer></script>
+    <script src="js/boon.js" defer></script>
   </head>
   <body>
     <!--상단메뉴 부분-->
@@ -251,21 +250,48 @@
               <h1>MEGABOX <b>VIP</b></h1>
               <p>메가박스의 더 많은 혜택을 누릴 수 있는 방법! 로그인 후 메가박스 등급을 확인하세요.</p>
 
-              <div class="login">
-                <div class="content">
-                  <form>
-                    <p>
-                      <input type="text" id="id" name="id" placeholder="아이디">
-                    </p>
-                    <p>
-                      <input type="text" id="pw" name="pw" placeholder="비밀번호">
-                    </p>
-                  </form>
-                </div>
-              </div>
               <!--버튼을 클릭하면 pooput함수가 호출-->
               <button type="button" onclick="popup()">로그인</button>
-
+              <div class="login">
+                <div class="content">
+                  <!--클로즈 버튼을 클릭하면 pClose함수가 실행-->
+                  <div class="close" onclick="pClose(event)">
+                    <a href="#"><i class="fas fa-times"></i></a>
+                  </div>
+                  <div class="form">
+                    <form>
+                      <p>
+                        <input type="text" id="id" name="id" placeholder="아이디">
+                      </p>
+                      <p>
+                        <input type="text" id="pw" name="pw" placeholder="비밀번호">
+                      </p>
+                      <p class="save">
+                        <input type="checkbox">아이디 저장
+                        <button type="button">휴대폰 간편로그인</button>
+                      </p>
+                      <button type="submit" class="login-btn">로그인</button>
+                      <div class="find">
+                        <div class="btn">
+                          <button type="button">ID/PW 찾기</button>
+                          <button type="button">회원가입</button>
+                          <button type="button">비회원 예매확인</button>
+                        </div>
+                        <div class="sns-icon">
+                          <img class="icon1" src="image/ico-kakao.png" alt="">
+                          <img class="icon1" src="image/ico-naver.png" alt="">
+                          <img class="icon1" src="image/ico-payco.png" alt="">
+                        </div>
+                    </form>
+                    </div>
+                    <!--이미지-->
+                    <div class="bg-img">
+                      <img src="image/고래와나-포스터.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <!--VIP 슬라이드 배너 이벤트-->
               <div class="vip-banner">
                 <p>vip 슬라이드 배너 이벤트 넣을 예정</p>
@@ -283,7 +309,7 @@
                     <div class="nav">
                       <div class="img">
                         <!--이미지 3개-->
-                        <img src="image/MVIP이미지.png" alt="">
+                        <img  src="image/MVIP이미지.png" alt="">
                         <img src="image/VVIP이미지.png" alt="">
                         <img src="image/VIP이미지.png" alt="">
                       </div>
