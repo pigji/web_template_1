@@ -1,260 +1,310 @@
-/*폰트*/
+/*노말라이즈*/
 @import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Nanum+Gothic:wght@400;700;800&display=swap');
-
-/*초기화*/
-*{margin: 0; padding: 0;}
-ul, li{list-style: none;}
-a{text-decoration: none; color: inherit;}
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+a{
+  text-decoration: none;
+  color:inherit;
+}
 body{
   font-family: "Nanum Gothic", Georgia;
-  font-size: 14px;
-  color: #111;
+  font-size:14px;
+  color:#111;
 }
-
-/*container:공통으로 들어가는 속성(코드 최소화)*/
+/*======================================*/
+/*공통속성*/
 .container{
-  width: 1000px;
-  margin: 0 auto; /*가운데정렬*/
-  box-sizing: border-box;
-  padding: 100px 20px;
+  width:1000px;
+  margin:0 auto;
+  box-sizing:border-box;
+  padding:100px 20px;
 }
-
-/* header:상단메뉴 */
+/*=======================================*/
+/*header*/
 header{
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);  /*연한 회색으로 반투명하게 그림자 설정*/
+  width:100%;
+  background-color:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,0.2);
 }
 header > .container{
-  padding: 24px 10px; /*위,아래:24px  좌,우:10px 여백설정*/
-  display: flex;  /*일열로 나란히 정렬*/
-  justify-content: space-between; /*각 요소 양끝에 배치(주축)*/
-  align-items: center;  /*교차축 가운데정렬*/
+  padding:24px 10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .logo{
   font-family: "Katibeh";
-  font-size: 42px;
-  height: 20px;
-  transform: translateY(-24px);
-  letter-spacing: 2px;  /*자간 넓히기(가독성을 위해)*/
+  font-size:42px;
+  height:20px;
+  transform:translateY(-24px);
+  letter-spacing: 2px;
 }
+
 nav{
-  display: flex;  /*일열로 나란히 정렬*/
-}
-nav > ul{
-  display: flex;
+  display:flex;
 }
 .gnb, .icon{
-  display: flex;
+  display:flex;
 }
 .gnb > li{
-  margin: 0 20px;
-  transform: translateY(2px); /* line-height: 20px; 와 같은 의미 */
+  margin:0 20px;
+  transform:translateY(2px);
 }
 .icon > li{
-  margin: 0 5px;
-  font-size: 20px;
+  margin:0 5px;
+  font-size:20px;
 }
-/*상단메뉴(header)의 마우스이벤트 효과*/
-nav li:hover, nav li.active{
-  color: orange;
+/*메뉴에 hover효과*/
+nav li:hover,
+nav li.active{
+  color:orange;
 }
-
-/*section:배너부분*/
+/*------------------------------------*/
+/*배너*/
 #banner{
-  min-width: 1000px;  /*최소넓이 설정*/
-  background: url(../img/main.jpg) center/cover;
-  height: 600px;
-  color: white;
+  min-width:1000px;
+  height:600px;
+  background:url(../img/main.jpg) center/cover;
+  color:#fff;
 }
 #banner h1{
-  font-family: Georgia, "Nanum Gothic";
-  font-size: 60px;
-  font-weight: normal;  /*글씨체 얇게 설정*/
+  font-family: Georgia,"Nanum Gothic";
+  font-size:60px;
+  font-weight: normal;
 }
 #banner h1 i{
-  color: orange;
-  padding-left: 20px;
+  color:orange; 
+  padding-left:20px;
 }
 #banner h2{
-  font-size: 30px;
-  margin: 10px 0 40px;  /*위:10px, 좌우:0px 아래:40px 여백설정*/
+  font-size:30px;
+  margin:10px 0 40px;
 }
 #banner .btn button{
-  padding: 8px 34px;
-  margin-right: 10px;
-  font-size: 14px;
-  background-color: transparent;  /*배경색 투명하게 설정*/
-  color: white;
-  border: 1px solid white;
-  cursor: pointer;
-  transition: all .3s;
+  padding:8px 34px;
+  margin-right:10px;
+  font-size:14px;
+  border:2px solid #fff;
+  background-color:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:all .3s;
 }
-/*버튼의 마우스이벤트 효과*/
+/*버튼에 hover효과*/
 #banner .btn button:hover{
-  border-color: orange;
-  color: orange;
+  border-color:#fc0;
+  color:#fc0;
 }
-
-/*section:works부분*/
+/*------------------------------------*/
+/*works*/
 #works{
-  background-color: #fcd307;
-  min-width: 1000px;
+  background-color:#fcd307;
+  min-width:1000px;
 }
 #works > .container{
-  width: 800px;
-  padding: 100px 0; /*좌우 여백을 제거*/
-  display: flex;  /*나란히 정렬*/
+  width:800px;
+  padding:100px 0;/*좌우 여백을 제거*/
+  display:flex;
 }
-/*works 이미지요소 박스*/
 #works .box{
-  width: 200px;
-  text-align: center; /*가운데정렬*/
+  width:200px;
+  text-align: center;
 }
 #works .box img{
   border-radius: 50%;
 }
 #works .box h3{
-  margin: 20px 0 5px;
+  margin:20px 0 5px;
 }
-
-/*about부분*/
+/*------------------------------------*/
+/*about*/
 #about h1{
-  font-family: Georgia, "Nanum Gothic";
-  font-size: 60px;
-  font-weight: normal;  /*글씨체 얇게 설정*/
+  font-family: Georgia,"Nanum Gothic";
+  font-size:60px;
+  font-weight: normal;
 }
 #about h1 i{
-  margin-right: 20px;
+  margin-right:20px;
 }
 #about > .container > p{
-  font-size: 18px;
-  text-indent: 70px;  /*텍스트 들여쓰기*/
-}
-#about .member{
-  margin: 60px 0;
-  display: flex;  /*나란히 정렬*/
-  justify-content: space-around;  /*좌,우 간격 일정하게 정렬*/ 
-}
-#about .member li{
-  text-align: center; /*가운데정렬*/
-}
-#about .member h3{
-  font-size: 14px;
-  margin: 20px 0 5px;
-  letter-spacing: 6px;  /*자간 넓히기*/
-}
-#about .member p{
-  letter-spacing: 2px;  /*자간 넓히기*/
-  color: #666;
-}
-#about .txt{
-  display: flex;  /*나란히 정렬*/
-}
-#about .txt > li{
-  padding: 0 20px;
-  text-align: justify;
-  line-height: 1.6; /*행간 넓히기*/
+  font-size:18px;
+  text-indent: 70px;
 }
 
-/*section:contact부분*/
+#about .member{
+  margin:60px 0;
+  display:flex;
+  justify-content: space-around;
+}
+#about .member > li{
+  text-align: center;
+  transition: all 0.3s; /*속성이 변경되면 0.3초동안 변경*/
+  opacity: 0; /*0값을 줘서 눈에 안보이게 함*/
+}
+
+/*해당 요소 속성적용*/
+#about .member > li:nth-child(1){
+  transform: translateX(-100%);
+}
+#about .member > li:nth-child(2){
+  transform: translateY(-100%);
+}
+#about .member > li:nth-child(3){
+  transform: translateY(100%);
+}
+#about .member > li:nth-child(4){
+  transform: translateX(100%);
+}
+
+/*멤버의 on클래스가 추가되면 li요소가 화면에 나타남*/
+#about .member.on > li{
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+
+#about .member h3{
+  font-size:14px;
+  margin:20px 0 5px;
+  letter-spacing: 6px;
+}
+#about .member p{
+  color:#666;
+  letter-spacing: 2px;
+}
+
+#about .txt{
+  display:flex;
+}
+#about .txt > li{
+  padding:0 20px;
+  text-align: justify;
+  line-height:1.6;
+}
+/*------------------------------------*/
+/*contact*/
 #contact{
-  min-width: 1000px;
-  background-color: #333;
-  color: white;
+  min-width:1000px;
+  background-color:#333;
+  color:#fff;
 }
 #contact h1{
-  font-family: Georgia, "Nanum Gothic";
-  font-size: 60px;
-  font-weight: normal;  /*글씨체 얇게 설정*/
+  font-family: Georgia,"Nanum Gothic";
+  font-size:60px;
+  font-weight: normal;
 }
 #contact h1 i{
-  margin-right: 20px;
+  margin-right:20px;
 }
 #contact > .container > p{
-  font-size: 18px;
-  text-indent: 70px;  /*텍스트 들여쓰기*/
+  font-size:18px;
+  text-indent: 70px;
 }
+
 #contact .contact-wrap{
-  display: flex;  /*요소 나란히 정렬*/
-  margin-top: 80px;
+  display:flex;
+  margin-top:80px;
 }
+#contact .contact-wrap .map > p{
+  margin: 5px 0;
+}
+#contact .contact-wrap .map > p > i{
+  margin: 5px 0;
+}
+
 .contact-wrap > div{
-  width: 50%;
+  width:50%;
 }
-.contact-wrap > .map{
-  box-sizing: border-box;
-  padding: 0 70px;
+
+.contact-wrap > .address{
+  box-sizing:border-box;
+  padding:0 70px;
 }
-.contact-wrap > .map > p{
-  margin-bottom: 40px;
-  line-height: 40px;
+
+.contact-wrap > .address > p{
+  margin-bottom:40px;
+  line-height:40px;
 }
-/*아이콘 설정*/
-.contact-wrap > .map > p > i{
-  font-size: 35px;
+.contact-wrap > .address > p > i{
+  font-size:35px;
   vertical-align: middle;
-  padding: 10px;
+  margin-right:10px;
 }
+
 .contact-input label{
-  display: block;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  display:block;
+  line-height:1.5;
+  margin-bottom:10px;
 }
 .contact-input .wrap{
-  display: flex;
-  justify-content: space-between; /*각 요소 양끝에 배치*/
+  display:flex;
+  justify-content: space-between;
 }
-.contact-input .wrap p{
-  width: 235px;
+.contact-input .wrap > p{
+  width:235px;
 }
 .contact-input .wrap > textarea{
-  width: 240px;
-  height: 130px;
-  border: 0;  /*테두리 제거*/
+  width:240px;
+  height:130px;
+  border:0; 
   outline: 0;
-  padding: 10px;  /*텍스트 들여쓰기*/
+  padding:10px;
   box-sizing: border-box;
 }
 input[type=text]{
-  width: 100%;
-  height: 40px;
-  border: 0;
-  margin-bottom: 5px;
-  padding: 10px;  /*텍스트 들여쓰기*/
+  width:100%;
+  height:40px;
+  border:0;
+  margin-bottom:5px;
+  padding:10px;
   box-sizing: border-box;
+  outline:0;
 }
-/*버튼요소*/
 input[type=submit]{
-  padding: 6px 24px;
-  background-color: #f9be20;
-  border: 0;
-  color: white;
+  padding:6px 24px;
+  background-color:#f9be20;
+  border:0;
+  color:#fff;
   font-weight: bold;
-  cursor: pointer;  /*마우스로 클릭할 수 있도록 설정*/
+  cursor:pointer;
 }
-/*버튼에 마우스이벤트 효과*/
+/*버튼에 hover효과*/
 input[type=submit]:hover{
-  background-color: #f5ae16;
-}
-#contact hr{
-  border: 1px solid white;
-  margin: 50px 0;
+  background-color:#f5ae16;
 }
 
-/*footer:하단메뉴*/
+#contact hr{
+  border:1px solid #fff;
+  margin:50px 0;
+}
+/*------------------------------------*/
+/*footer*/
 footer > .container{
-  padding: 30px 10px;
-  display: flex;
+  padding:30px 10px;
+  display:flex;
   justify-content: space-between;
   align-items: center;
 }
 footer p{
-  padding-left: 70px;
+  padding-left:70px;
 }
-footer span{
-  margin-right: 30px;
-}
+footer span{margin-right:30px;}
 footer p a{
-  background-color: #ff9;
+  background-color:#ff9;
+}
+/*------------------------------------*/
+/*scrollTop버튼*/
+.top{
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;  /*고정*/
+  bottom: 20px;
+  right: 30px;
+  z-index: 999;
+  display: none;  /*스크롤로 밑으로 이동했을때만 나타나게 하기 위해 none설정*/
+}
+.top i{
+  margin-right: 5px;
 }
