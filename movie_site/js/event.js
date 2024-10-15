@@ -1,28 +1,41 @@
-/*tap메뉴 JS코드*/
-//버튼요소와 지역 리스트 선택
-const tabMenus = document.querySelectorAll(".tab_menu > button");
-const tabLists = document.querySelectorAll(".tab_list > div");
+//문서가 전부 로드 되었을때 실행
+window.addEventListener("load", ()=>{
+  const grid = new Isotope("section", {
+    itemSelector : "article", //배치할 요소명
+    columnWidth : "article",  //넓이 값을 구할 요소명
+    transitionDuration : "0.5s" //화면배치 애니메이션 속도
+  });
 
-//모든 버튼을 순회하면서 클릭이벤트를 추가
-tabMenus.forEach((tabMenu, idx) => tabMenu.addEventListener("click", () => {
-  console.log("버튼클릭")
-  
-  //버튼의 갯수만큼 반복 실행
-  for(let i = 0; i < tabMenus.length; i++){
-    //모든 버튼과 리스트요소에 클래스를 제거
-    tabMenus[i].classList.remove("on");
-    console.log(tabMenus) //확인
+  //클릭할 모든 버튼요소를 변수에 저장
+  const btns = document.querySelectorAll("main ul li");
+  console.log(btns) //확인
 
-    tabLists[i].classList.remove("on");
+  //btns배열의 요소를 하나씩 뽑아서 갯수만큼 반복문을 실행
+  for(let el of btns){
+    console.log(el) //확인
+
+    el.addEventListener("click", (e) => {
+      e.preventDefault(); //윈도우의 기본 기능인 링크기능 제거
+
+      const sort = e.currentTarget.querySelector("a").getAttribute("href");
+      console.log(sort) //확인
+
+      //grid에 저장된 결과 값을 불러와 재정렬 기능 연결
+      grid.arrange({
+        //옵션값으로 sort변수 값 지정
+        filter : sort
+      })
+
+      //다시 모든 버튼의 갯수만큼 반복을 돌림
+      for(let el2 of btns){
+        el2.classList.toggle("on", el2 === el)
+      }
+    })
   }
+})
 
-  //클릭한 버튼에 on클래스 추가
-  tabMenu.classList.add("on");
-  //클릭한 버튼과 같은 순번의 리스트요소 on클래스 추가
-  tabLists[idx].classList.add("on");
-}))
 /*----------------------------------------------------------*/
-/*vip 슬라이드 배너*/
+/*이벤트 슬라이드 배너*/
 //슬라이드 이미지 선택
 const list = document.querySelector("#banner");
 const listLi = document.querySelectorAll("#banner > li");
@@ -71,30 +84,4 @@ document.querySelector('.prev').addEventListener('click', (e) => {
     list.style.transition = 'margin-left .5s';
     list.style.marginLeft = `${-li_width * num}px`
   }, 50)
-})
-
-/*----------------------------------------------------------*/
-/*로그인 팝업창 JS코드*/
-//로그인 폼 선택
-const login = document.querySelector(".login")
-
-//함수 생성
-function popup(){
-  //로그인의 display값을 block으로 변경하여 화면에 표시
-  login.style.display = "block";
-}
-
-//pClose함수 생성
-function pClose(event){
-  event.preventDefault(); //링크를 제거
-  login.style.display = "none"; //로그인 창을 화면에서 제거
-}
-
-//login영역을 클릭하면 로그인이 닫히는 구현
-window.addEventListener("click", (e) => {
-  console.log(e.target) //클릭한 요소를 읽어올 수 있음
-
-  if(e.target == login){
-    login.style.display = "none";
-  }
 })

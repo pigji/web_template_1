@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/3223480a48.js" crossorigin="anonymous"></script>
   <!--js-->
   <script src="js/isotope.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/event.js" defer></script>
 </head>
 <body>
   <!--상단메뉴 부분-->
@@ -48,13 +48,19 @@
         <li class="discount"><a href=".preview">시사회/무대인사</a></li>
       </ul>
       <!--추천 이벤트 슬라이드로 표현-->
-      <div class="suggestion">
-        <div class="txt">
-          <h1>추천 이벤트 - 슬라이드 추가 예정</h1>
-          <p><a href="#">더보기 ></a></p>
-        </div>
-        <div></div>
-      </div> <!--suggestion-->
+      <div id="event-banner">
+        <div id="frame">
+          <ul id="banner">
+            <li><a href="#"><img src="image/이벤트슬라이드이미지1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/이벤트슬라이드이미지2.png" alt=""></a></li>
+            <li><a href="#"><img src="image/이벤트슬라이드이미지4.jpg" alt=""></a></li>
+          </ul>
+        </div> <!--frame-->
+        <p>
+          <a class="prev">&#10094;</a> <!--이전버튼-->
+          <a class="next">&#10095;</a>  <!--다음버튼-->
+        </p>
+      </div> <!--event-banner-->
 
       <section>
         <div class="event-box">
