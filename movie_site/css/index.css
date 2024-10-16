@@ -148,6 +148,31 @@ section .boon > .txt{
   width: 680px;
   position:relative;
 }
+section .boon > .txt > .slide-img{
+  display: none;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+/*dot버튼*/
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+
+
+
+
+/*-----*/
 section .boon > .txt .bImg-box{
   display: flex;
   justify-content: space-between;
@@ -209,8 +234,13 @@ section .boon > .txt > .b-event-box > img:nth-of-type(2){
   height: 180px;
 }
 
-/*dot버튼*/
-section .boon > .txt .dot{
+
+
+
+
+
+
+/* section .boon > .txt .dot{
   position:absolute;
   width:50%;
   transform:translateY(-50px);
@@ -222,13 +252,13 @@ section .boon > .txt .dot span{
   width:10px; height:10px;
   border:1px solid #000;
   /* background-color:#000; */
-  border-radius: 50%;
+  /* border-radius: 50%;
   margin:0 10px;
   cursor:pointer;
-}
-section .boon > .txt .dot span.on{
+} */
+/* section .boon > .txt .dot span.on{
   background-color: #000;
-}
+} */ */
 
 /*--------------------------------------------------*/
 /*section : */
