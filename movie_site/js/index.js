@@ -35,6 +35,6 @@ function showSlides(n){
     dot.classList.remove("active");
   })
   //slideIndex -1번째의 슬라이드를 화면에 표시하고 같은 순번의 dot버튼을 활성화
-  slides[slideIndex -1].style.display = "block";
-  dots[slideIndex -1].classList.add("active");
+  slides[slideIndex - 1].style.display = "flex";
+  dots[slideIndex - 1].classList.add("active");
 }

@@ -149,7 +149,9 @@ section .boon > .txt{
   position:relative;
 }
 section .boon > .txt > .slide-img{
-  display: none;
+  width: 100%;
+  height: auto;
+  border: 1px solid red;
 }
 .active,
 .dot:hover {
