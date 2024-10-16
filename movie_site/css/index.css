@@ -63,9 +63,45 @@ font-size: 15px;
   display: flex;
   justify-content: space-evenly;
 }
+
+/*영화 소개글[hover했을때 이벤트]*/
 .moivie_box .box-office > .box{
+  width: 250px;
+  height: 350px;
   cursor: pointer;
+  overflow: hidden; /*애니메이션 효과*/
+  position: relative;
 }
+.moivie_box .box-office > .box > .overlay{
+  position: absolute; /*유령화로 공주에 띄움*/
+  /*부모요소와 같은 크기로 겹치게 설정*/
+  left: 0; right: 0; top: 0; bottom: 0;
+  /*배경색 어둡게 설정*/
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 40px 20px;
+  line-height: 1.5em;
+}
+/*이미지요소*/
+.moivie_box .box-office > .box > .overlay > img{
+  width: 250px;
+  height: 350px;
+}
+/*hover효과*/
+.overlay{
+  opacity: 0;
+  /* transform: scale(10) rotate(-720deg); */
+  transform: translateY(100%);  /*위로 나타나듯이 효과를 줌*/
+  transition: all 0.5s;
+}
+/*box에 마우스를 올리면 overlay가 나타남*/
+.box:hover > .overlay{
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+
+
 .moivie_box > h1{
   text-align: center;
   margin-top: 60px;
@@ -148,30 +184,35 @@ section .boon > .txt{
   width: 680px;
   position:relative;
 }
+/*슬라이드 배너 이미지*/
 section .boon > .txt > .slide-img{
   width: 100%;
   height: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .active,
 .dot:hover {
   background-color: #717171;
 }
 /*dot버튼*/
-.dot {
+.dot-btn{
+  width: 100%;
+  height: auto;
+  width: 200px;
+  margin-left: 35px;
+  position: relative;
+  bottom: 60px;
+}
+.dot{
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  margin: 0 20px;
+  background-color: #503396;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
-
-
-
 
 
 /*-----*/
@@ -179,19 +220,42 @@ section .boon > .txt .bImg-box{
   display: flex;
   justify-content: space-between;
 }
+/*이미지 요소*/
 section .boon > .txt .bImg-box > .img > img{
-  margin-top: 70px;
-  width: 90%;
-  height: 80%;
-
+  margin-top: 50px;
+  width: 385px;
+  height: 325px;
 }
+section .boon > .txt .bImg-box:nth-of-type(2) > .img > img{
+  width: 335px;
+  margin-right: 15px;
+}
+section .boon > .txt .bImg-box:nth-of-type(3) > .img > img{
+  width: 315px;
+  margin-right: 15px;
+}
+
 /*텍스트 부분*/
 section .boon > .txt .bImg-box > .box-inner{
   /* border: 2px solid yellow; */
-  width: 60%;
+  width: 380px;
+  height: 300px;
+}
+section .boon > .txt .bImg-box > .box-inner > h2{
+  font-size: 36px;
+  font-weight: normal;
 }
 section .boon > .txt .bImg-box > .box-inner > h1{
-  font-size: 36px;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 40px;
+  margin: 10px 0 30px;
+}
+section .boon > .txt .bImg-box:nth-of-type(2) > .box-inner > h1{
+  color: #037b94;
+}
+section .boon > .txt .bImg-box:nth-of-type(3) > .box-inner > h1{
+  color: #177035;
 }
 section .boon > .txt .bImg-box > .box-inner > h3{
   font-weight: normal;
@@ -200,6 +264,7 @@ section .boon > .txt .bImg-box > .box-inner > h3{
 }
 section .boon > .txt .bImg-box > .box-inner > p{
   margin-bottom: 20px;
+  color: #666;
 }
 
 /*룩백 이미지*/
@@ -211,6 +276,7 @@ section .boon > .boon-img > img{
   transform:translateY(20px);
   border-radius: 5px;
   width: 400px;
+  height: 535px;
   z-index: 10;
 }
 
@@ -221,7 +287,8 @@ section .boon > .txt > .b-event-box{
   align-items: center;
   width: 100%;
   position: absolute;
-  bottom: -170px;
+  bottom: -150px;
+  /* border: 2px solid blue; */
 }
 section .boon > .txt > .b-event-box > img{
   width: 470px;
@@ -238,32 +305,11 @@ section .boon > .txt > .b-event-box > img:nth-of-type(2){
 
 
 
-
-
-
-
-/* section .boon > .txt .dot{
-  position:absolute;
-  width:50%;
-  transform:translateY(-50px);
-  display:flex;
-  justify-content: center;
-}
-section .boon > .txt .dot span{
-  display:block;
-  width:10px; height:10px;
-  border:1px solid #000;
-  /* background-color:#000; */
-  /* border-radius: 50%;
-  margin:0 10px;
-  cursor:pointer;
-} */
-/* section .boon > .txt .dot span.on{
-  background-color: #000;
-} */ */
-
 /*--------------------------------------------------*/
 /*section : */
+section .event-menu > .box{
+  
+}
 section .event-menu{
   width: 100%;
   height: 300px;
@@ -312,14 +358,14 @@ section .curation > h1{
   font-size: 32px;
 }
 /*버튼요소*/
-section .curation > button{
+section .curation > a{
   font-size: 15px;
   border: none;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
 }
-section .curation > button:hover{
+section .curation > a:hover{
   text-decoration: underline;
 }
 .introduction{

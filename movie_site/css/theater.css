@@ -183,7 +183,7 @@ section .event > .e_txt > h1{
   color: #503396;
   font-size: 28px;
 }
-section .event > .e_txt > p:hover{
+section .event > .e_txt > a:hover{
   text-decoration: underline;
 }
 section .event > .theater-event{

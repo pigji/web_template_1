@@ -95,9 +95,9 @@ main ul > li:hover{
   color: #503396;
 }
 
-
-/*스토어 목록표시*/
+/*스토어 샹품표시*/
 main .store_box{
+  /* border: 1px solid black; */
   width: 100%;
   margin-top: 50px;
 }
@@ -106,14 +106,15 @@ main .store_box::after{ /*클리어픽스 핵*/
   display: block;
   clear: both;
 }
+
+
 /*각 목록박스*/
 main section article{
-   border: 1px solid red;  /*영역 확인용*/
-   width: 240px;
-   height: 435px;
+   /* border: 1px solid red; */
+   width: 250px;
+   height: 445px;
    margin: 10px;
    float:left;
-   box-sizing: border-box;
    cursor: pointer;
 }
 
@@ -122,9 +123,8 @@ main section article > .box{
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
   text-align: center;
-  /* padding: 10px; */
+  box-sizing: border-box;
 }
 /*마우스이벤트 효과*/
 main section article > .box:hover{
