@@ -83,7 +83,7 @@ main ul{
   font-weight: 600;
 }
 main ul > li{
-  border: 1px solid #ccc;
+  border: 1px solid #ebebeb;
   width: 250px;
   height: 40px;
   text-align: center;
@@ -92,6 +92,7 @@ main ul > li{
 }
 /*마우스이벤트 효과*/
 main ul > li:hover{
+  border-bottom: 1px solid #503396;
   color: #503396;
 }
 /*영화검색 input창*/
@@ -115,10 +116,6 @@ main .M-box{
   /* border: 2px solid gold; */
   width: 100%;
   margin-top: 50px;
-  /* display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap; */
 }
 main .M-box::after{ /*클리어픽스 핵*/
   content: "";

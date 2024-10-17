@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영화 사이트 - card(할인카드)</title>
+
+  <!--css-->
+  <link rel="stylesheet" href="css/card.css">
+  <!--폰트어썸 내 script 코드-->
+  <script src="https://kit.fontawesome.com/3223480a48.js" crossorigin="anonymous"></script>
+  <!--js-->
+  <script src="js/card.js" defer></script>
+</head>
+<body>
+  <!--상단메뉴 부분-->
+  <header>
+    <div class="bg-color">
+      <div class="container">
+        <div class="list">
+          <ul>
+            <li><a href="movie.html">영화</a></li>
+            <li><a href="#">예매</a></li>
+            <li><a href="theater.html">극장</a></li>
+          </ul>
+          <a href="index.html" class="logo"></a>
+          <ul>
+            <li><a href="event.html">이벤트</a></li>
+            <li><a href="store.html">스토어</a></li>
+            <li><a href="boon.html">혜택</a></li>
+          </ul>
+        </div> <!--list-->
+      </div> <!--container-->
+    </div> <!--bg-color-->
+  </header>
+
+  <main>
+    <div class="container">
+      <!--추천 이벤트 슬라이드로 표현-->
+      <h1>제휴 할인</h1>
+      <div id="event-banner">
+        <p>제휴이벤트</p>
+        <div id="frame">
+          <ul id="banner">
+            <li>
+              <a href="#"><img src="image/제휴이벤트슬라이드1.jpg" alt=""></a>
+              <p>[LG유플러스] 멤버십 전용 메가박스 할인!</p>
+            </li>
+            <li><a href="#"><img src="image/이벤트슬라이드이미지2.png" alt=""></a></li>
+            <li><a href="#"><img src="image/제휴이벤트슬라이드2.jpg" alt=""></a></li>
+          </ul>
+        </div> <!--frame-->
+        <p>
+          <a class="prev">&#10094;</a> <!--이전버튼-->
+          <a class="next">&#10095;</a>  <!--다음버튼-->
+        </p>
+      </div> <!--event-banner-->
+      
+      <!--tab메뉴 목록-->
+      <div class="tab_menu">
+        <button class="on">할인안내</button>
+        <button>신용카드(283)</button>
+        <button>통신사(3)</button>
+        <button>포인트/기타제휴(15)</button>
+        <button>상품권/관람권(3)</button>
+      </div>
+      <div class="tab_list">
+        <div class="contnet">
+          <div id="discount" class="on">
+            <div>
+              <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+              <p>소지하고 계신 카드를 검색해 보세요. 할인 및 헤택정보를 빠르게 확인할 수 있습니다.</p>
+            </div>
+            <div>
+              <input type="text" placeholder="카드명을 검해보세요.">
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <p>통신사</p>
+                <button type="button">전체보기 ></button>
+              </div>
+              <b>3</b>
+              <select name="" id="">
+                <option value="">통신사 선택</option>
+                <option value="">LG U+</option>
+                <option value="">SKT</option>
+                <option value="">KT</option>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p>신용카드</p>
+                <button type="button">전체보기 ></button>
+              </div>
+              <b>283</b>
+              <select name="" id="">
+                <option value="">통신사 선택</option>
+                <option value="">LG U+</option>
+                <option value="">SKT</option>
+                <option value="">KT</option>
+              </select>
+            </div>
+            <div>
+              <div>
+                <p>포인트/기타제휴</p>
+                <button type="button">전체보기 ></button>
+              </div>
+              <b>15</b>
+              <select name="" id="">
+                <option value="">통신사 선택</option>
+                <option value="">LG U+</option>
+                <option value="">SKT</option>
+                <option value="">KT</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <b>삼품권/관람권</b>
+            <button type="button">전체보기 ></button>
+          </div>
+        </div> <!--contnet-->
+
+        
+        <div id="credit-card">
+          <!--내용넣기-->
+        </div>
+        <div id="news-agency">
+          <!--내용넣기-->
+        </div>
+        <div id="points-etc">
+          <!--내용넣기-->
+        </div>
+        <div id="gift-certificate">
+          <!--내용넣기-->
+        </div>
+      </div>
+    </div> <!--container-->
+  </main>
+
+  <!--footer-->
+  <footer>
+    <div class="bg-color4"></div>
+    <div class="container">
+      <div class="f-box">
+        <div class="content">
+          <ul>
+            <li>회사소개</li>
+            <li>인재채용</li>
+            <li>사회공헌</li>
+            <li>제휴/광고/부대사업문의</li>
+            <li>이용약관</li>
+            <li>위치기반서비스 이용약관</li>
+            <li><b>개인정보처리방침</b></li>
+            <li>윤리경영</li>
+          </ul>
+          <p><i class="fa-solid fa-magnifying-glass"></i> 극장찾기</p>
+        </div>
+        <div class="f-menu">
+          <div class="logo-img"></div>
+          <div class="txt">
+            <p>서울특별시 성동구 왕십리로 50, 6층 (성수동1가, 메가박스 스퀘어) ARS 1544-0070 대표이메일 m.dreamcenter@partner.megabox.co.kr
+              대표자명 홍정인 · 개인정보보호책임자 강병철 · 사업자등록번호 211-86-59478 · 통신판매업신고번호 2023-서울성동-0177
+              2024 LOGO &copy; copyright all right reserved.
+            </p>
+          </div>
+          <div class="sns">
+            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-square-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div> <!--container-->
+  </footer>
+</body>
+</html>
