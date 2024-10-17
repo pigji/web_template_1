@@ -57,7 +57,7 @@ addEventListener('load', () => {
     }
   )
 })
-
+/*-----------------------------------------------------*/
 //썸네일 이미지에 커서를 올리면 큰 이미지가 나타나는 애니메이션 구현
 //이미지 갤러리
 const mainImage = document.querySelector('.gallery-image img');
@@ -70,7 +70,7 @@ thumbImages.forEach(thumbImage => thumbImage.addEventListener('mouseover', (e) =
   //메인 이미지의 opacity를 0에서 1로 0.5초동안 변경
   mainImage.animate({opacity: [0, 1]}, 500);
 }));
-
+/*-----------------------------------------------------*/
 //슬라이드 메뉴
 const menuOpen = document.querySelector('#menu-open');
 const menuClose = document.querySelector('#menu-close');
@@ -110,4 +110,84 @@ menuClose.addEventListener('click', () => {
   menuPanel.animate({translate: [0, '100vw']}, menuOptions);
   //메뉴 리스트에 한번에 동시에 서서리 사라지게 함
   menuItems.forEach(menuItems => menuItems.animate({opacity: [1, 0]}, menuOptions));
+})
+/*-----------------------------------------------------*/
+//모달창
+const open = document.querySelector("#open");
+const close = document.querySelector("#close");
+const modal = document.querySelector("#modal");
+
+const showKeyframes = {
+  opacity:[0, 1],
+  visibility: 'visible'
+}
+
+const hideKeyframes = {
+  opacity:[1, 0],
+  visibility: 'hidden'
+}
+
+const options = {
+  duration: 300,
+  easing: 'ease',
+  fill:'forwards'
+}
+
+//모달창 열기
+open.addEventListener('click', () => {
+  modal.animate(showKeyframes, options)
+})
+
+//모달창 닫기
+close.addEventListener('click',() => {
+  modal.animate(hideKeyframes, options);
+})
+
+//#modal을 클릭하면 모달창 닫기
+modal.addEventListener('click',(e) => {
+  console.log(e.target)
+  //클릭한 요소가 modal이면 close버튼의 click이벤트를 발생시켜서 모달창을 닫아 줍니다
+  if(e.target == modal) close.click();
+})
+/*-----------------------------------------------------*/
+//스크롤로 요소 표시
+//관찰 대상이 범위안에 들어오면 실행하는 동작
+//entries = 관찰대상 요소
+//obs = 콜백을 호출한 IntersectionObserver
+
+//스크롤로 요소 표시
+//관찰 대상이 범위 안에 들어오면 실행하는 동작
+//entries = 관찰 대상 요소
+//obs = 콜백을 호출한 IntersectionObserver
+
+const animateFade = (entries, obs) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ //요소가 보이는 영역에 들어오면 .isIntersecting = true
+      entry.target.animate(
+        //동작
+        {
+          opacity:[0,1],
+          filter:['blur(.4rem)','blur(0)'],
+          translate: ['0 4rem', 0]
+        },
+        //옵션
+        {
+          duration: 2000,
+          easing: 'ease',
+          fill: 'forwards'
+        }
+      );
+      //부드럽게 한번 표시되었다면 관찰 중지
+      obs.unobserve(entry.target)
+    }
+  })
+}
+
+//관찰 설정
+const fadeObserver = new IntersectionObserver(animateFade)
+
+//.fadein을 관찰하도록 지시
+const fadeElements = document.querySelectorAll('.fadein');
+fadeElements.forEach(fadeElement => {
+  fadeObserver.observe(fadeElement)
 })
