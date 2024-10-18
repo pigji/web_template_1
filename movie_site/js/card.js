@@ -88,7 +88,7 @@ tabMenus2.forEach((tabMenu2, idx) => tabMenu2.addEventListener("click", () => {
   for(let i = 0; i < tabMenus2.length; i++){
     //모든 버튼과 리스트요소에 클래스를 제거
     tabMenus2[i].classList.remove("on");
-    console.log(tabMenus2) //확인
+    console.log(tabLists2[i]) //확인
 
     tabLists2[i].classList.remove("on");
   }
