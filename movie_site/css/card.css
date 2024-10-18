@@ -296,11 +296,11 @@ main .tab_list .three:nth-of-type(3) select{
 .news-agency-box{
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red;  영역확인용 */
 }
 .news-agency-box > .notice{
   margin: 10px;
-  padding: 35px 30px;
+  padding: 30px;
   border: 1px solid #ebebeb;
   border-radius: 10px;
   text-align: center;
@@ -316,34 +316,199 @@ main .tab_list .three:nth-of-type(3) select{
 }
 .news-agency-box > h1{
   margin-top: 50px;
-}
-.news-agency-box > .carrier-card{
-  border: 2px solid yellowgreen;
+  margin-bottom: 10px;
+  color: #503396;
 }
 
+
 /*카드 이미지 및 설명 글*/
+.news-agency-box > .carrier-card > h1{
+  color: #503396;
+}
 .news-agency-box > .carrier-card > .C-card1{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  border-top: 1px solid #333; /*영역 확인용*/
+  border-bottom: 1px solid #e2e2e2; /*영역 확인용*/
+  padding-top:30px;
+  padding-bottom:30px;
+  margin-bottom: 70px;
 }
 /*카드 이미지*/
 .news-agency-box > .carrier-card > .C-card1 > img{
-  width: 230px;
-  height: 230px;
+  width: 250px;
+  height: 250px;
+  margin:0 40px;
 }
 
+/*텍스트를 감싸고 있는 div*/
 .news-agency-box .C-card1 > .C-detail{
-  
+  margin-right: 20px;
+  width: 100%;
 }
-.news-agency-box .C-card1 > .C-detail > .C-btn{
+.news-agency-box .C-card1 > .C-detail > .tit{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.news-agency-box .C-card1 > .C-detail > .tit > b{
+  font-size: 24px;
+}
+
+/*버튼요소*/
+.news-agency-box .C-card1 > .C-detail > .tit .C-btn > button{
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+.news-agency-box .C-card1 > .C-detail > .tit .C-btn > .btn1{
+  color: #503396;
+  border-color: #503396;
+}
+.news-agency-box .C-card1 > .C-detail > .tit .C-btn > .btn2{
+  color: #037b94;
+  border-color: #037b94;
+}
+
+/*텍스트 영역*/
+.news-agency-box .C-card1 > .C-detail > .C-ex{
+  margin-top: 15px;
+}
+.news-agency-box .C-card1  .C-ex > .text-all > .cc > b{
+  margin: 5px 0;
+  display: block;
+}
+.news-agency-box .C-card1  .C-ex > .text-all > .cc > p{
+  margin-left: 35px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.news-agency-box .C-card1 .cc > p > b{
+  color: red;
+}
+
+/*2번째 + 3번째 카드 공통속성*/
+.news-agency-box .C-card1  .C-ex > .text-all > .cc1 > p{
+  font-size: 14px;
+  line-height: 1.7;
+}.news-agency-box .C-card1  .C-ex > .text-all > .cc1 > p:nth-of-type(2){
+  margin-left: 30px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.news-agency-box .C-card1 .cc1 > p > b{
+  color: red;
+}
+
+
+/*버튼요소*/
+.cc1 > button{
+  width: 100px;
+  color: #fff;
+  background: #503396;
+  line-height: 36px;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.news-agency-box .C-detail > .text-all > div > p{
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+/*특정 텍스트*/
+.news-agency-box .C-detail > .text-all > div > p > b{
+  color: red;
+}
 /*--------------------------------------------------*/
 /*포인트&기타제휴 안내 부분*/
+.points-etc-box{
+  width: 100%;
+  height: 100%;
+}
+.points-etc-box > .notice{  /*상단 타이틀*/
+  margin: 10px;
+  padding: 30px;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+}
+.points-etc-box > .point-box{ /*카드를 감까고 있는 전체 박스*/
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
 
+/*1개의 카드박스*/
+.points-etc-box > .point-box ul{  
+  border-top: 1px solid #333; /*구분선*/
+}
+.points-etc-box > .point-box li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.points-etc-box > .point-box li > .p-box{
+  /* border: 1px solid red; 영역확인용 */
+  width: 100%;
+}
+.points-etc-box > .point-box li .top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+/*버튼요소*/
+.p-box > .top > .btn > button{
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+.p-box > .top > .btn > .btn1{
+  color: #503396;
+  border-color: #503396;
+}
+.p-box > .top > .btn > .btn2{
+  color: #037b94;
+  border-color: #037b94;
+}
+
+/*텍스트 영역*/
+.points-etc-box > .point-box li .p-box .txt{
+  line-height: 1.6;
+  font-size: 15px;
+  margin-left: 50px;
+}
+.points-etc-box > .point-box li .p-box .txt > .t-right{
+  margin-left: 50px;
+}
+/*특정 텍스트 요소 설정*/
+.points-etc-box > .point-box li .p-box .txt > .t-right > b{
+  font-size: 12px;
+  color: red;
+}
+/*특정요소 버튼요소*/
+.p-box .txt > button{
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background-color: #503396;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
 
 /*--------------------------------------------------*/
 /*상품권&관람권 안내 부분*/

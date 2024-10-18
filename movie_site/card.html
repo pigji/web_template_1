@@ -1,286 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 사이트 - card(할인카드)</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 사이트 - card(할인카드)</title>
 
-  <!--css-->
-  <link rel="stylesheet" href="css/card.css">
-  <!--폰트어썸 내 script 코드-->
-  <script src="https://kit.fontawesome.com/3223480a48.js" crossorigin="anonymous"></script>
-  <!--js-->
-  <script src="js/card.js" defer></script>
-</head>
-<body>
-  <!--상단메뉴 부분-->
-  <header>
-    <div class="bg-color">
-      <div class="container">
-        <div class="list">
-          <ul>
-            <li><a href="movie.html">영화</a></li>
-            <li><a href="#">예매</a></li>
-            <li><a href="theater.html">극장</a></li>
-          </ul>
-          <a href="index.html" class="logo"></a>
-          <ul>
-            <li><a href="event.html">이벤트</a></li>
-            <li><a href="store.html">스토어</a></li>
-            <li><a href="boon.html">혜택</a></li>
-          </ul>
-        </div> <!--list-->
-      </div> <!--container-->
-    </div> <!--bg-color-->
-  </header>
-
-  <main>
-    <div class="container">
-      <!--추천 이벤트 슬라이드로 표현-->
-      <h1>제휴 할인</h1>
-      <div id="event-banner">
-        <p>제휴이벤트</p>
-        <div id="frame">
-          <ul id="banner">
-            <li>
-              <a href="#"><img src="image/제휴이벤트슬라이드1.jpg" alt=""></a>
-              <p>[LG유플러스] 멤버십 전용 메가박스 할인!</p>
-            </li>
-            <li><a href="#"><img src="image/이벤트슬라이드이미지2.png" alt=""></a></li>
-            <li><a href="#"><img src="image/제휴이벤트슬라이드2.jpg" alt=""></a></li>
-          </ul>
-        </div> <!--frame-->
-        <p>
-          <a class="prev">&#10094;</a> <!--이전버튼-->
-          <a class="next">&#10095;</a>  <!--다음버튼-->
-        </p>
-      </div> <!--event-banner-->
-      
-      <!--tab메뉴 목록-->
-      <div class="tab_menu">
-        <button class="on">할인안내</button>
-        <button>신용카드(283)</button>
-        <button>통신사(3)</button>
-        <button>포인트/기타제휴(15)</button>
-        <button>상품권/관람권(3)</button>
-      </div>
-      <div class="tab_list">
-        <!--할인안내-->
-        <div id="discount" class="on">
-          <div class="D-all">
-            <div class="input-box">
-              <div class="txt">
-                <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
-                <p>소지하고 계신 카들르 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
-              </div>
-              <div class="D-search">
-                <input type="text" placeholder="카드명을 검색해 보세요.">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </div>
-            <div class="detail">
-              <div class="three">
-                <div class="D-menu">
-                  <div class="option-box">
-                    <div class="title">
-                      <b>통신사</b>
-                      <button>전체보기 ></button>
-                    </div>
-                    <h3>3</h3>
-                    <select name="op" id="op">
-                      <option value="news-agency">통신사 선택</option>
-                      <option value="lg">LG U+</option>
-                      <option value="skt">SKT</option>
-                      <option value="kt">KT</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="three">
-                <div class="D-menu">
-                  <div class="option-box">
-                    <div class="title">
-                      <b>신용카드</b>
-                      <button>전체보기 ></button>
-                    </div>
-                    <h3>283</h3>
-                    <select name="op" id="op">
-                      <option value="card">카드 선택</option>
-                      <option value="skt">메가박스 카드</option>
-                      <option value="kt">삼성카드</option>
-                      <option value="kt">현대카드</option>
-                      <option value="kt">신한카드</option>
-                      <option value="kt">비씨카드</option>
-                      <option value="kt">KB국민카드</option>
-                      <option value="kt">우리카드</option>
-                      <option value="kt">하나카드</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="three">
-                <div class="D-menu">
-                  <div class="option-box">
-                    <div class="title">
-                      <b>포인트/기타제휴</b>
-                      <button>전체보기 ></button>
-                    </div>
-                    <h3>15</h3>
-                    <select name="op" id="op">
-                      <option value="point">포인트/기타제휴 선택</option>
-                      <option value="lg">포인트/기타제휴 선택</option>
-                      <option value="skt">기타</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="gift">
-              <b>상품권/관람권</b>
-              <button>전체보기 ></button>
-            </div>
-          </div> <!--D-all-->
+    <!--css-->
+    <link rel="stylesheet" href="css/card.css" />
+    <!--폰트어썸 내 script 코드-->
+    <script
+      src="https://kit.fontawesome.com/3223480a48.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--js-->
+    <script src="js/card.js" defer></script>
+  </head>
+  <body>
+    <!--상단메뉴 부분-->
+    <header>
+      <div class="bg-color">
+        <div class="container">
+          <div class="list">
+            <ul>
+              <li><a href="movie.html">영화</a></li>
+              <li><a href="#">예매</a></li>
+              <li><a href="theater.html">극장</a></li>
+            </ul>
+            <a href="index.html" class="logo"></a>
+            <ul>
+              <li><a href="event.html">이벤트</a></li>
+              <li><a href="store.html">스토어</a></li>
+              <li><a href="boon.html">혜택</a></li>
+            </ul>
+          </div>
+          <!--list-->
         </div>
-        <!--신용카드-->
-        <div id="credit-card">
-          <div>
+        <!--container-->
+      </div>
+      <!--bg-color-->
+    </header>
+
+    <main>
+      <div class="container">
+        <!--추천 이벤트 슬라이드로 표현-->
+        <h1>제휴 할인</h1>
+        <div id="event-banner">
+          <p>제휴이벤트</p>
+          <div id="frame">
+            <ul id="banner">
+              <li>
+                <a href="#"
+                  ><img src="image/제휴이벤트슬라이드1.jpg" alt=""
+                /></a>
+                <p>[LG유플러스] 멤버십 전용 메가박스 할인!</p>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="image/이벤트슬라이드이미지2.png" alt=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="image/제휴이벤트슬라이드2.jpg" alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <!--frame-->
+          <p>
+            <a class="prev">&#10094;</a>
+            <!--이전버튼-->
+            <a class="next">&#10095;</a>
+            <!--다음버튼-->
+          </p>
+        </div>
+        <!--event-banner-->
+
+        <!--tab메뉴 목록-->
+        <div class="tab_menu">
+          <button class="on">할인안내</button>
+          <button>신용카드(283)</button>
+          <button>통신사(3)</button>
+          <button>포인트/기타제휴(10)</button>
+          <button>상품권/관람권(3)</button>
+        </div>
+        <div class="tab_list">
+          <!--할인안내-->
+          <div id="discount" class="on">
+            <div class="D-all">
+              <div class="input-box">
+                <div class="txt">
+                  <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+                  <p>
+                    소지하고 계신 카들르 검색해 보세요. 할인 및 혜택정보를
+                    빠르게 확인할 수 있어요.
+                  </p>
+                </div>
+                <div class="D-search">
+                  <input type="text" placeholder="카드명을 검색해 보세요." />
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </div>
+              <div class="detail">
+                <div class="three">
+                  <div class="D-menu">
+                    <div class="option-box">
+                      <div class="title">
+                        <b>통신사</b>
+                        <button>전체보기 ></button>
+                      </div>
+                      <h3>3</h3>
+                      <select name="op" id="op">
+                        <option value="news-agency">통신사 선택</option>
+                        <option value="lg">LG U+</option>
+                        <option value="skt">SKT</option>
+                        <option value="kt">KT</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="three">
+                  <div class="D-menu">
+                    <div class="option-box">
+                      <div class="title">
+                        <b>신용카드</b>
+                        <button>전체보기 ></button>
+                      </div>
+                      <h3>283</h3>
+                      <select name="op" id="op">
+                        <option value="card">카드 선택</option>
+                        <option value="skt">메가박스 카드</option>
+                        <option value="kt">삼성카드</option>
+                        <option value="kt">현대카드</option>
+                        <option value="kt">신한카드</option>
+                        <option value="kt">비씨카드</option>
+                        <option value="kt">KB국민카드</option>
+                        <option value="kt">우리카드</option>
+                        <option value="kt">하나카드</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="three">
+                  <div class="D-menu">
+                    <div class="option-box">
+                      <div class="title">
+                        <b>포인트/기타제휴</b>
+                        <button>전체보기 ></button>
+                      </div>
+                      <h3>15</h3>
+                      <select name="op" id="op">
+                        <option value="point">포인트/기타제휴 선택</option>
+                        <option value="lg">포인트/기타제휴 선택</option>
+                        <option value="skt">기타</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="gift">
+                <b>상품권/관람권</b>
+                <button>전체보기 ></button>
+              </div>
+            </div>
+            <!--D-all-->
+          </div>
+          <!--신용카드-->
+          <div id="credit-card">
             <div>
               <div>
-                <b>더욱 알뜰하게 메가박스를 즐기는 방법</b>
-                <p>소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
-              </div>
-              <div class="sub_tab_menu">
-                <button class="on">전체</button>
-                <button>메가박스카드</button>
-                <button>삼성카드</button>
-                <button>현대카드</button>
-                <button>신한카드</button>
-                <button>비씨카드</button>
-              </div>
-              <div class="sub_tab_list">
-                <div id="card-all" class="on">
-                  <div>
-                    dkfjdskf
+                <div>
+                  <b>더욱 알뜰하게 메가박스를 즐기는 방법</b>
+                  <p>
+                    소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를
+                    빠르게 확인할 수 있어요.
+                  </p>
+                </div>
+                <div class="sub_tab_menu">
+                  <button class="on">전체</button>
+                  <button>메가박스카드</button>
+                  <button>삼성카드</button>
+                  <button>현대카드</button>
+                  <button>신한카드</button>
+                  <button>비씨카드</button>
+                </div>
+                <div class="sub_tab_list">
+                  <div id="card-all" class="on">
+                    <div>dkfjdskf</div>
                   </div>
                 </div>
               </div>
+              <div></div>
             </div>
-            <div></div>
           </div>
-        </div>
-        <!--통신사-->
-        <div id="news-agency">
-          <div class="news-agency-box">
-            <div class="notice">
-              <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
-              <p>소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
+          <!--통신사-->
+          <div id="news-agency">
+            <div class="news-agency-box">
+              <div class="notice">
+                <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+                <p>
+                  소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게
+                  확인할 수 있어요.
+                </p>
+              </div>
+              <h1>LG U+</h1>
+              <!--카드목록 안내 영역-->
+              <div class="carrier-card">
+                <div class="C-card1">
+                  <img src="image/통신사카드1.png" alt="" />
+                  <div class="C-detail">
+                    <div class="tit">
+                      <b>LG U+ 멤버십</b>
+                      <div class="C-btn">
+                        <button class="btn1">인터넷할인</button>
+                        <button class="btn2">현장할인</button>
+                      </div>
+                    </div>
+                    <div class="C-ex">
+                      <p>제공혜택</p>
+                      <div class="text-all">
+                        <div class="cc">
+                          <b>&nbsp;&nbsp;&nbsp;1) VIP콕 할인</b>
+                          <p>
+                            - VIP 무료 : 티켓 1매 무료 예매 (월 1회, 연 3회
+                            제한)<br />
+                            - VIP 1+1 : 2매 이상 예매 시 1매 무료, 1매 유료 (월
+                            1회, 연 9회 제한)<br />
+                            - VIP 특별관 6천원 할인 : 하기 특별관에 한하여 티켓
+                            1매 6천원 할인 (월 1회, 연 12회)
+                          </p>
+                          <p>
+                            * VIP 무료, 1+1 적용조건<br />
+                            &nbsp;&nbsp;&nbsp;ㄴ 일반관, 컴포트관, 일반석,
+                            스페셜석<br />
+                            * VIP 특별관 6천원 할인 적용조건<br />
+                            &nbsp;&nbsp;&nbsp;ㄴ 더부티크, 더부티크스위트, Dolby
+                            Atmos, Dolby Cinema, MX4D, 일반석, 스페셜석<br />
+                          </p>
+                          <p></p>
+                        </div>
+                        <div class="cc">
+                          <b>&nbsp;&nbsp;&nbsp;2) 상시 할인</b>
+                          <p>
+                            - VVIP/VIP : 티켓 1매당 4천원 할인 (동반 3인까지, 일
+                            1회 제한)<br />
+                            - 일반 : 티켓 1매당 2천원 할인 (동반 3인까지, 일 1회
+                            제한)
+                          </p>
+                          <p>
+                            사 용 처<br />
+                            1) VIP 콕 할인 : 메가박스 온라인<br />
+                            2) 상시 할인 : 메가박스 온/오프라인
+                          </p>
+                          <p>
+                            유의사항<br />
+                            1) VIP 콕 할인<br />
+                            - 월 1회에 한하여 VIP 무료/1+1/특별관 6천원 할인예매
+                            중 1개의 혜택만 적용 가능<br />
+                            - 2D 일반컨텐츠/성인/청소년/우대에 한하여 적용 가능<br />
+                            - 당월에 다른 LGU+ VIP 콕 사용 시 적용 불가<br />
+                            2) 상시할인<br />
+                            - 조조/우대/경로/어린이/문화의날/특별콘텐츠
+                            이용불가<br />
+                            - 돌비시네마, 더부티크스위트, 더부티크 프라이빗 적용
+                            불가<br />
+                            &nbsp;<b>※ 타 제휴 및 할인 쿠폰 중복 적용 불가</b>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!--C-detail-->
+                </div> <!--C-card1-->
+                <h1>SKT</h1>
+                <div class="C-card1">
+                  <img src="image/통신사카드2.png" alt="">
+                  <div class="C-detail">
+                    <div class="tit">
+                      <b>LG U+ 멤버십</b>
+                      <div class="C-btn">
+                        <button class="btn1">인터넷할인</button>
+                      </div>
+                    </div>
+                    <div class="C-ex">
+                      <p>제공혜택</p>
+                      <div class="text-all">
+                        <div class="cc1">
+                          <p>
+                            상시할인: 영화 1천원 ~ 4천원 할인(일 1회, 동반4인)<br>
+                            사 용  처: T멤버십 온라인(홈페이지/App)<br>
+                            유의사항: 조조/우대/경로/어린이/문화의날/특별콘텐츠 이용불가<br>
+                          </p>
+                          <p>
+                            돌비시네마, 돌비애트모스, 더부티크스위트, 더부티크 프라이빗 적용 불가<br>
+                            1만 1천원 이상 티켓에 한하여 적용 가능<br>
+                            <b>타 제휴 및 할인 쿠폰 중복 적용 불가</b>
+                          </p>
+                          <button>자세히보기</button>
+                        </div>
+                      </div> 
+                    </div> <!--text-all-->
+                  </div> <!--C-detail-->
+                </div>
+                <h1>KT</h1>
+                <div class="C-card1">
+                  <img src="image/통신사카드3.png" alt="">
+                  <div class="C-detail">
+                    <div class="tit">
+                      <b>LG U+ 멤버십</b>
+                      <div class="C-btn">
+                        <button class="btn1">인터넷할인</button>
+                      </div>
+                    </div>
+                    <div class="C-ex">
+                      <p>제공혜택</p>
+                      <div class="text-all">
+                        <div class="cc1">
+                          <p>
+                            상시할인: 영화 1.1만원 관람(일반관, 컴포트관, 일반석, 스페셜석)<br>
+                            사 용  처: KT멤버십  온라인(홈페이지/App)<br>
+                            유의사항: 조조/우대/경로/어린이/문화의날/특별콘텐츠 이용불가<br>
+                          </p>
+                          <p>
+                            돌비시네마, 돌비애트모스, 더부티크스위트, 더부티크 프라이빗 적용 불가<br>
+                            1만 1천원 이상 티켓에 한하여 적용 가능<br>
+                            <b>타 제휴 및 할인 쿠폰 중복 적용 불가</b>
+                          </p>
+                          <button>자세히보기</button>
+                        </div>
+                      </div> 
+                    </div> <!--text-all-->
+                  </div> <!--C-detail-->
+                </div>
+              </div> <!--carrier-card-->
+              
             </div>
-            <h1>LG U+</h1>
-            <!--카드목록 안내 영역-->
-            <div class="carrier-card">
-              <div class="C-card1">
-                <img src="image/통신사카드1.png" alt="">
-                <div class="C-detail">
-                  <div class="C-btn">
-                    <b>LG U+ 멤버십</b>
-                    <div>
-                      <button>인터넷할인</button>
-                      <button>현장할인</button>
-                    </div>
-                  </div>
-                  <p>제공혜택</p>
-                  <div>
-                    <div>
-                      <b>1) VIP콕 할인</b>
-                      <p>
-                        - VIP 무료 : 티켓 1매 무료 예매 (월 1회, 연 3회 제한)<br>
-                        - VIP 1+1 : 2매 이상 예매 시 1매 무료, 1매 유료 (월 1회, 연 9회 제한)<br>
-                        - VIP 특별관 6천원 할인 : 하기 특별관에 한하여 티켓 1매 6천원 할인 (월 1회, 연 12회)
-                      </p>
-                      <p>
-                        * VIP 무료, 1+1 적용조건<br>
-                        &nbsp;&nbsp;&nbsp;ㄴ 일반관, 컴포트관, 일반석, 스페셜석<br>
-                        * VIP 특별관 6천원 할인 적용조건<br>
-                        &nbsp;&nbsp;&nbsp;ㄴ 더부티크, 더부티크스위트, Dolby Atmos, Dolby Cinema, MX4D, 일반석, 스페셜석<br>
-                      </p>
-                      <p></p>
-                    </div>
-                    <div>
-                      <b>2) 상시 할인</b>
-                      <p>
-                        - VVIP/VIP : 티켓 1매당 4천원 할인 (동반 3인까지, 일 1회 제한)<br>
-                        - 일반 : 티켓 1매당 2천원 할인 (동반 3인까지, 일 1회 제한)
-                      </p>
-                      <p>
-                        사 용  처<br>
-                        1) VIP 콕 할인 : 메가박스 온라인<br>
-                        2) 상시 할인 : 메가박스 온/오프라인
-                      </p>
-                      <p>
-                        유의사항<br>
-                        1) VIP 콕 할인<br>
-                            - 월 1회에 한하여 VIP 무료/1+1/특별관 6천원 할인예매 중 1개의 혜택만 적용 가능<br>
-                            - 2D 일반컨텐츠/성인/청소년/우대에 한하여 적용 가능<br>
-                            - 당월에 다른 LGU+ VIP 콕 사용 시 적용 불가<br>
-                        2) 상시할인<br>
-                            - 조조/우대/경로/어린이/문화의날/특별콘텐츠 이용불가<br>
-                            - 돌비시네마, 더부티크스위트, 더부티크 프라이빗 적용 불가<br>
-                              타 제휴 및 할인 쿠폰 중복 적용 불가
-                      </p>
-                    </div>
-                  </div>
-                </div> <!--C-detail-->
-              </div> <!--C-card1-->
-            </div> <!--carrier-card-->
           </div>
-        </div>
-        <!--포인트/기타제휴-->
-        <div id="points-etc">
-          <!--내용넣기-->
-        </div>
-        <!--상품권/관람권-->
-        <div id="gift-certificate">
-          <!--내용넣기-->
+          <!--포인트/기타제휴-->
+          <div id="points-etc">
+            <div class="points-etc-box">
+              <div class="notice">
+                <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+                <p>
+                  소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게
+                  확인할 수 있어요.
+                </p>
+              </div> <!--notice-->
+              <div class="point-box">
+                <ul>
+                  <li>
+                    <img src="image/포인트카드1.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>블루멤버스 포인트</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 티켓 1매당 4천원 할인(1일 최대 8매)<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 우대/문화의날 이용불가
+                        </p>
+                        <p class="t-right">
+                          돌비시네마 할인 불가<br>
+                          타사 제휴포인트 중복할인(최대 2개까지) 적용가능<br>
+                          <b>(단, 현대M포인트, 문화누리카드 중복적용 불가)</b>
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드2.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>기아멤버스</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 결제금액의 일부 혹은 전체 포인트 차감사용 가능<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 잔여 1,000 포인트 이상 보유 시, 1,000 포인트 단위로 사용 가능
+                        </p>
+                        <p class="t-right">
+                          * 포인트 차감금액 메가박스 멤버십 적립 불가
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드3.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>OK캐쉬백(사용)</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 결제금액의 일부 혹은 전체 포인트 차감사용 가능<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 잔여 1천 포인트 이상 보유 시, 현장 500점/ 온라인 100점 단위로 사용 가능
+                        </p>
+                        <p class="t-right">
+                          사용 시 현장과 온라인 비밀번호 상이함으로 오케이캐쉬백 홈페이지 참조<br>
+                          * 포인트 차감금액 메가박스 멤버십 적립 불가
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드4.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>GS & Point 카드</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 티켓 1매당 2천원 할인(1일 최대 10매)<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 우대/문화의날 이용불가
+                        </p>
+                        <p class="t-right">
+                          돌비시네마 할인 불가<br>
+                          타사 제휴포인트 중복할인(최대 2개까지) 적용가능<br>
+                          <b>(단, 현대M포인트, 문화누리카드 중복적용 불가)</b>
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드5.jpg" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>해피포인트 카드</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 티켓 1매당 2천p, 5천p 중 선택하여 할인<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 우대/문화의날 이용불가
+                        </p>
+                        <p class="t-right">
+                          돌비시네마 할인 불가<br>
+                          타사 제휴포인트 중복할인(최대 2개까지) 적용가능<br>
+                          <b>(단, 현대M포인트, 문화누리카드 중복적용 불가)</b>
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드6.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>하나포인트</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 :  결제금액의 일부 혹은 전체 포인트 차감사용 가능<br>
+                          사  용  처 : 온/오프라인<br>
+                        </p>
+                        <p class="t-right">
+                          하나포인트 사용 대상카드에 한하여 사용 가능(BC 제외)<br>
+                          보유 포인트 1P 이상 시 사용 가능
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>
+                    <img src="image/포인트카드7.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>현대카드 M포인트</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 상시 장당 6,000P 사용<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 우대/문화의날 이용불가
+                        </p>
+                        <p class="t-right">
+                          일부 특별관(돌비시네마, 더부티크 프라이빗) 할인 불가<br>
+                          <b>중복할인 적용 불가</b><br>
+                          포인트 차감한 현대카드로 결제 필수
+                        </p>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>  <!--버튼요소가 있는 카드요소-->
+                    <img src="image/포인트카드8.jpg" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>문화누리카드</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인방식 : 현장할인(즉시할인)<br>
+                          제공혜택 : 2,500원 할인(1일 2매)<br>
+                          사용조건 : 현장결제, 온라인<br>
+                          서비스 제공조건<br>
+                          - 성인/청소년 정가에서만 할인 적용 가능<br>
+                          (조조/심야/우대/마티네/어린이 등 기타 중복할인 불가)<br>
+                          - 문화의 날 적용 불가<br>
+                          - 2D/ 3D 일반, 컴포트관에서만 할인 가능<br>
+                          (돌비시네마, 더 부티크, 특별관 및 특별콘텐트, 기타 콘텐트 할인 불가)<br>
+                          - 문화누리카드 할인 이용 시 문화누리카드로만 결제 가능하며, 잔여 금액 부족 시 결제 불가<br>
+                          - 할인제외지점: 센트럴, 삼천포, 속초, 아트나인, 제주서귀포
+                        </p>
+                        <button>자세히 보기</button>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>  <!--버튼요소가 있는 카드요소-->
+                    <img src="image/포인트카드9.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>L.POITN(사용)</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          할인 유형 : 포인트 차감<br>
+                          제공 혜택 : 결제금액의 일부 혹은 전체 포인트 차감사용 가능<br>
+                          사  용  처 : 온/오프라인<br>
+                          유의 사항 : 100 포인트 이상 보유 시 사용 가능 (사용제한 없음)<br>
+                        </p>
+                        <p class="t-right">
+                          * 포인트 차감금액 메가박스 멤버십 및 L.POINT 적립 불가
+                        </p>
+                        <button>자세히 보기</button>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  <li>  <!--버튼요소가 있는 카드요소-->
+                    <img src="image/포인트카드10.png" alt="">
+                    <div class="p-box">
+                      <div class="top">
+                        <b>L.POINT(적립)</b>
+                        <div class="btn">
+                          <button class="btn1">인터넷할인</button>
+                          <button class="btn2">현장할인</button>
+                        </div>
+                      </div>
+                      <div class="txt">
+                        <p>
+                          혜택 유형 : L.POINT 적립<br>
+                          적립 기준 : 결제 금액의 2% L포인트 적립<br>
+                          유의 사항 : 위탁예매처(통신사, BC페이북, 현대카드M몰 등)를 통한 예매 건은 포인트 적립 불가
+                        </p>
+                        <p class="t-right">
+                          온라인 예매 건 현장 추후 적립 불가<br>
+                          (온라인 예매건은 온라인에서만, 현장 예매 건은 현장에서만 적립 가능)<br>
+                          메가박스 포인트 차감 예매/관람권/온라인 스토어/모바일 쿠폰 사용 시 적립 불가<br>
+                          매표 결제 금액에 한해 적립 가능 (매점 결제 금액은 적립 불가)<br>
+                          <b>
+                            영화 티켓 내 관람일자 기준 +3일 05시 59분까지만 추후 적립 가능<br>
+                            (예시 - 2024년 8월 25일 영화관람 시 8월 28일 05시 59분까지 적립가능)<br>
+                            L.POINT 사용 금액 제외 후 적립<br>
+                            OK캐쉬백 적립과 중복 적용 불가
+                          </b>
+                        </p>
+                        <button>자세히 보기</button>
+                      </div> <!--txt-->
+                    </div> <!--p-box"-->
+                  </li>
+                  
+                </ul>
+              </div> <!--point-box-->
+            </div>
+          </div>
+          <!--상품권/관람권-->
+          <div id="gift-certificate">
+            <!--내용넣기-->
+          </div>
         </div>
       </div>
-    </div> <!--tab_list-->
-  </main>
+      <!--tab_list-->
+    </main>
 
-  <!--footer-->
-  <footer>
-    <div class="bg-color4"></div>
-    <div class="container">
-      <div class="f-box">
-        <div class="content">
-          <ul>
-            <li>회사소개</li>
-            <li>인재채용</li>
-            <li>사회공헌</li>
-            <li>제휴/광고/부대사업문의</li>
-            <li>이용약관</li>
-            <li>위치기반서비스 이용약관</li>
-            <li><b>개인정보처리방침</b></li>
-            <li>윤리경영</li>
-          </ul>
-          <p><i class="fa-solid fa-magnifying-glass"></i> 극장찾기</p>
-        </div>
-        <div class="f-menu">
-          <div class="logo-img"></div>
-          <div class="txt">
-            <p>서울특별시 성동구 왕십리로 50, 6층 (성수동1가, 메가박스 스퀘어) ARS 1544-0070 대표이메일 m.dreamcenter@partner.megabox.co.kr
-              대표자명 홍정인 · 개인정보보호책임자 강병철 · 사업자등록번호 211-86-59478 · 통신판매업신고번호 2023-서울성동-0177
-              2024 LOGO &copy; copyright all right reserved.
-            </p>
+    <!--footer-->
+    <footer>
+      <div class="bg-color4"></div>
+      <div class="container">
+        <div class="f-box">
+          <div class="content">
+            <ul>
+              <li>회사소개</li>
+              <li>인재채용</li>
+              <li>사회공헌</li>
+              <li>제휴/광고/부대사업문의</li>
+              <li>이용약관</li>
+              <li>위치기반서비스 이용약관</li>
+              <li><b>개인정보처리방침</b></li>
+              <li>윤리경영</li>
+            </ul>
+            <p><i class="fa-solid fa-magnifying-glass"></i> 극장찾기</p>
           </div>
-          <div class="sns">
-            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-square-twitter"></i></a>
+          <div class="f-menu">
+            <div class="logo-img"></div>
+            <div class="txt">
+              <p>
+                서울특별시 성동구 왕십리로 50, 6층 (성수동1가, 메가박스 스퀘어)
+                ARS 1544-0070 대표이메일 m.dreamcenter@partner.megabox.co.kr
+                대표자명 홍정인 · 개인정보보호책임자 강병철 · 사업자등록번호
+                211-86-59478 · 통신판매업신고번호 2023-서울성동-0177 2024 LOGO
+                &copy; copyright all right reserved.
+              </p>
+            </div>
+            <div class="sns">
+              <a href="https://www.youtube.com/"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.facebook.com/"
+                ><i class="fa-brands fa-square-twitter"></i
+              ></a>
+            </div>
           </div>
         </div>
-      </div>
-    </div> <!--container-->
-  </footer>
-</body>
+      </div> <!--container-->
+    </footer>
+  </body>
 </html>
