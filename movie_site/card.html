@@ -65,78 +65,157 @@
         <button>상품권/관람권(3)</button>
       </div>
       <div class="tab_list">
-        <div class="contnet">
-          <div id="discount" class="on">
-            <div>
-              <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
-              <p>소지하고 계신 카드를 검색해 보세요. 할인 및 헤택정보를 빠르게 확인할 수 있습니다.</p>
-            </div>
-            <div>
-              <input type="text" placeholder="카드명을 검해보세요.">
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <p>통신사</p>
-                <button type="button">전체보기 ></button>
+        <!--할인안내-->
+        <div id="discount" class="on">
+          <div class="D-all">
+            <div class="input-box">
+              <div class="txt">
+                <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+                <p>소지하고 계신 카들르 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
               </div>
-              <b>3</b>
-              <select name="" id="">
-                <option value="">통신사 선택</option>
-                <option value="">LG U+</option>
-                <option value="">SKT</option>
-                <option value="">KT</option>
-              </select>
-            </div>
-            <div>
-              <div>
-                <p>신용카드</p>
-                <button type="button">전체보기 ></button>
+              <div class="D-search">
+                <input type="text" placeholder="카드명을 검색해 보세요.">
+                <i class="fa-solid fa-magnifying-glass"></i>
               </div>
-              <b>283</b>
-              <select name="" id="">
-                <option value="">통신사 선택</option>
-                <option value="">LG U+</option>
-                <option value="">SKT</option>
-                <option value="">KT</option>
-              </select>
             </div>
-            <div>
-              <div>
-                <p>포인트/기타제휴</p>
-                <button type="button">전체보기 ></button>
+            <div class="detail">
+              <div class="three">
+                <div class="D-menu">
+                  <div class="option-box">
+                    <div class="title">
+                      <b>통신사</b>
+                      <button>전체보기 ></button>
+                    </div>
+                    <h3>3</h3>
+                    <select name="op" id="op">
+                      <option value="news-agency">통신사 선택</option>
+                      <option value="lg">LG U+</option>
+                      <option value="skt">SKT</option>
+                      <option value="kt">KT</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <b>15</b>
-              <select name="" id="">
-                <option value="">통신사 선택</option>
-                <option value="">LG U+</option>
-                <option value="">SKT</option>
-                <option value="">KT</option>
-              </select>
+              <div class="three">
+                <div class="D-menu">
+                  <div class="option-box">
+                    <div class="title">
+                      <b>신용카드</b>
+                      <button>전체보기 ></button>
+                    </div>
+                    <h3>283</h3>
+                    <select name="op" id="op">
+                      <option value="card">카드 선택</option>
+                      <option value="skt">메가박스 카드</option>
+                      <option value="kt">삼성카드</option>
+                      <option value="kt">현대카드</option>
+                      <option value="kt">신한카드</option>
+                      <option value="kt">비씨카드</option>
+                      <option value="kt">KB국민카드</option>
+                      <option value="kt">우리카드</option>
+                      <option value="kt">하나카드</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="three">
+                <div class="D-menu">
+                  <div class="option-box">
+                    <div class="title">
+                      <b>포인트/기타제휴</b>
+                      <button>전체보기 ></button>
+                    </div>
+                    <h3>15</h3>
+                    <select name="op" id="op">
+                      <option value="point">포인트/기타제휴 선택</option>
+                      <option value="lg">포인트/기타제휴 선택</option>
+                      <option value="skt">기타</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <b>삼품권/관람권</b>
-            <button type="button">전체보기 ></button>
-          </div>
-        </div> <!--contnet-->
-
-        
+            <div class="gift">
+              <b>상품권/관람권</b>
+              <button>전체보기 ></button>
+            </div>
+          </div> <!--D-all-->
+        </div>
+        <!--신용카드-->
         <div id="credit-card">
-          <!--내용넣기-->
+          <div>
+            <div>
+              <div>
+                <b>더욱 알뜰하게 메가박스를 즐기는 방법</b>
+                <p>소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
+              </div>
+              <div class="sub_tab_menu">
+                <button class="on">전체</button>
+                <button>메가박스카드</button>
+                <button>삼성카드</button>
+                <button>현대카드</button>
+                <button>신한카드</button>
+                <button>비씨카드</button>
+              </div>
+              <div class="sub_tab_list">
+                <div id="card-all" class="on">
+                  <div>
+                    dkfjdskf
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
         </div>
+        <!--통신사-->
         <div id="news-agency">
-          <!--내용넣기-->
+          <div>
+            <div class="notice">
+              <b>더욱 알뜰하게 메가박스를 즐기는 방법!</b>
+              <p>소지하고 계신 카드를 검색해 보세요. 할인 및 혜택정보를 빠르게 확인할 수 있어요.</p>
+            </div>
+            <h1>LG U+</h1>
+            <!--카드목록 안내 영역-->
+            <div>
+              <div>
+                <img src="" alt="">
+                <div>
+                  <b>LG U+ 멤버십</b>
+                  <p>제공혜택</p>
+                  <div>
+                    <div>
+                      <b>1) VIP콕 할인</b>
+                      <p>
+                        - VIP 무료 : 티켓 1매 무료 예매 (월 1회, 연 3회 제한)<br>
+                        - VIP 1+1 : 2매 이상 예매 시 1매 무료, 1매 유료 (월 1회, 연 9회 제한)<br>
+                        - VIP 특별관 6천원 할인 : 하기 특별관에 한하여 티켓 1매 6천원 할인 (월 1회, 연 12회)
+                      </p>
+                      <p>
+                        * VIP 무료, 1+1 적용조건<br>
+                        &nbsp;&nbsp;&nbsp;ㄴ 일반관, 컴포트관, 일반석, 스페셜석<br>
+                        * VIP 특별관 6천원 할인 적용조건<br>
+                        &nbsp;&nbsp;&nbsp;ㄴ 더부티크, 더부티크스위트, Dolby Atmos, Dolby Cinema, MX4D, 일반석, 스페셜석<br>
+                      </p>
+                      <p></p>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!--포인트/기타제휴-->
         <div id="points-etc">
           <!--내용넣기-->
         </div>
+        <!--상품권/관람권-->
         <div id="gift-certificate">
           <!--내용넣기-->
         </div>
       </div>
-    </div> <!--container-->
+    </div> <!--tab_list-->
   </main>
 
   <!--footer-->

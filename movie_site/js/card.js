@@ -73,3 +73,28 @@ tabMenus.forEach((tabMenu, idx) => tabMenu.addEventListener("click", () => {
   //클릭한 버튼과 같은 순번의 리스트요소 on클래스 추가
   tabLists[idx].classList.add("on");
 }))
+
+
+/*---------------------------------------------------------------*/
+//버튼요소와 지역 리스트 선택
+const tabMenus2 = document.querySelectorAll(".sub_tab_menu > button");
+const tabLists2 = document.querySelectorAll(".sub_tab_list > div");
+
+//클릭이벤트를 추가
+tabMenus2.forEach((tabMenu2, idx) => tabMenu2.addEventListener("click", () => {
+  console.log("버튼클릭")
+  
+  //버튼의 갯수만큼 반복 실행
+  for(let i = 0; i < tabMenus2.length; i++){
+    //모든 버튼과 리스트요소에 클래스를 제거
+    tabMenus2[i].classList.remove("on");
+    console.log(tabMenus2) //확인
+
+    tabLists2[i].classList.remove("on");
+  }
+
+  //클릭한 버튼에 on클래스 추가
+  tabMenu2.classList.add("on");
+  //클릭한 버튼과 같은 순번의 리스트요소 on클래스 추가
+  tabLists2[idx].classList.add("on");
+}))
