@@ -652,8 +652,12 @@ form > .save > button{
 
 /*--------------------------------------------------*/
 /*footer*/
-footer > .bg-color4{
+footer{
   background-color: #f8f8fa;
+}
+footer > .bg-color4{
+  border-top: 1px solid #ececec;
+  margin-top: 70px;
 }
 footer .f-box{
   width: 100%;
@@ -664,7 +668,6 @@ footer .content{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
 }
 footer .content > ul{
   margin-top: 30px;

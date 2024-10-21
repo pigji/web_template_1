@@ -324,13 +324,14 @@ section .event-menu > .box{
 section .event-menu > .box:hover{
   color: gold;
 }
-section .event-menu > .box > h2{
+section .event-menu > .box > a{
   font-size: 14px;
   font-weight: normal;
 }
 /*아이콘*/
 section .event-menu > .box > i{
   font-size: 35px;
+  margin-top: 40px;
   margin-bottom: 15px;
 }
 
@@ -449,22 +450,22 @@ section .curation > a:hover{
   box-sizing: border-box;
 }
 #cinema .C-box > .theater:nth-of-type(1){
-  background: url(../image/극장안내이미지.avif) center/cover;
+  background: url(../image/index/극장안내이미지.avif) center/cover;
 }
 #cinema .C-box > .theater:nth-of-type(2){
-  background: url(../image/영화관이미지1.png) center/cover;
+  background: url(../image/index/영화관이미지1.png) center/cover;
 }
 #cinema .C-box > .theater:nth-of-type(3){
-  background: url(../image/영화관이미지2.png) center/cover;
+  background: url(../image/index/영화관이미지2.png) center/cover;
 }
 #cinema .C-box > .theater:nth-of-type(4){
-  background: url(../image/극장안내이미지.avif) center/cover;
+  background: url(../image/index/극장안내이미지.avif) center/cover;
 }
 #cinema .C-box > .theater:nth-of-type(5){
-  background: url(../image/영화관이미지4.png) center/cover;
+  background: url(../image/index/영화관이미지4.png) center/cover;
 }
 #cinema .C-box > .theater:nth-of-type(6){
-  background: url(../image/영화관이미지5.png) center/cover;
+  background: url(../image/index/영화관이미지5.png) center/cover;
 }
 
 
@@ -572,8 +573,12 @@ section > .poster{
 }
 /*--------------------------------------------------*/
 /*footer*/
-footer > .bg-color4{
+footer{
   background-color: #f8f8fa;
+}
+footer > .bg-color4{
+  border-top: 1px solid #ececec;
+  margin-top: 70px;
 }
 footer .f-box{
   width: 100%;
