@@ -66,12 +66,17 @@ font-size: 15px;
 
 /*영화 소개글[hover했을때 이벤트]*/
 .moivie_box .box-office > .box{
-  width: 250px;
+  width: 230px;
   height: 350px;
   cursor: pointer;
   overflow: hidden; /*애니메이션 효과*/
   position: relative;
 }
+.moivie_box .box-office > .box > img{
+  width: 100%;
+  height: 100%;
+}
+
 .moivie_box .box-office > .box > .overlay{
   position: absolute; /*유령화로 공주에 띄움*/
   /*부모요소와 같은 크기로 겹치게 설정*/
@@ -105,30 +110,50 @@ font-size: 15px;
   margin-top: 60px;
   font-size: 14px;
 }
+.moivie_box > .box-office > .box{
+  width: 250px;
+  height: 350px;
+}
 .moivie_box > .box-office > .box > img{
   width: 250px;
   height: 350px;
   border-radius: 10px;
 }
+
 /*예매하기 부분*/
-.moivie_box .views{
+.view-btn{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.view-btn .views{
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.moivie_box .views p{
-  font-size: 15px;
-  line-height: 1.2;
+.view-btn .views > p{
+  width: 70px;
+  height: 35px;
+  border: 1px solid #fff;
+  font-size: 14px;
   margin-bottom: 15px;
-  padding-left: 10px;
+  padding-left: 13px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  line-height: 35px;
 }
-/*버튼*/
+
+/*예매하기 버튼*/
 .moivie_box .views button{
   border: 0;
   background-color: #037b94;
   width: 160px;
-  height: 35px;
+  height: 38px;
   border-radius: 7px;
+
   margin-bottom: 15px;
   color: #fff;
   cursor: pointer;
@@ -316,21 +341,23 @@ section .event-menu{
   color: #fff;
   text-align: center;
 }
-section .event-menu > .box{
+.event-menu > .box{
   margin: 0 70px;
   cursor: pointer;
+  display: block;
 }
 /*마우스이벤트 효과*/
 section .event-menu > .box:hover{
   color: gold;
 }
-section .event-menu > .box > a{
+.event-menu > .box > a{
+  width: 100%;
   font-size: 14px;
   font-weight: normal;
 }
 /*아이콘*/
-section .event-menu > .box > i{
-  font-size: 35px;
+.event-menu > .box > a > p{
+  font-size: 40px;
   margin-top: 40px;
   margin-bottom: 15px;
 }
@@ -546,16 +573,15 @@ section > .bg-color3 .user-menu > .box{
   cursor: pointer;
 }
 /*아이콘*/
-section > .bg-color3 .user-menu > .box > i{
+section > .bg-color3 .user-menu > .box i{
   color: #037b94;
   font-size: 40px;
 }
-/*텍스트*/
-section > .bg-color3 .user-menu > .box > h2{
-  font-size: 20px;
+section > .bg-color3 .user-menu > .box > a{
   margin-top: 10px;
-  color: #555;
+  display: block;
 }
+/*텍스트*/
 section > .bg-color3 .user-menu > .box:hover{
   text-decoration: underline;
 }

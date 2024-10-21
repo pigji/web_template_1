@@ -37,9 +37,10 @@
 
   <!--main : 이벤트 목록-->
   <main>
+    <div class="color"></div>
     <div class="container">
       <h1>진행중인 이벤트</h1>
-      <ul>
+      <ul class="ev">
         <li class="on"><a href="*">전체</a></li>
         <li class="pick"><a href=".pick">Pick</a></li>
         <li class="movie"><a href=".movie">영화</a></li>
@@ -49,11 +50,30 @@
       </ul>
       <!--추천 이벤트 슬라이드로 표현-->
       <div id="event-banner">
+        <b>추천 이벤트</b>
         <div id="frame">
           <ul id="banner">
-            <li><a href="#"><img src="image/event/이벤트슬라이드이미지1.jpg" alt=""></a></li>
-            <li><a href="#"><img src="image/event/이벤트슬라이드이미지2.png" alt=""></a></li>
-            <li><a href="#"><img src="image/event/이벤트슬라이드이미지4.jpg" alt=""></a></li>
+            <li>
+              <a href="#"><img src="image/event/이벤트슬라이드이미지1.jpg" alt=""></a>
+              <div class="text">
+                <p>[베테랑2] 흥행 기념 현장 증정 이벤트</p>
+                <p>2024.10.09 ~ 2024.10.22</p>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="image/event/이벤트슬라이드이미지2.png" alt=""></a>
+              <div class="text">
+                <p>[토스페이] 토스페이 생애 첫 결제 시...</p>
+                <p>2024.10.01 ~ 2024.10.31</p>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="image/event/이벤트슬라이드이미지4.jpg" alt=""></a>
+              <div class="text">
+                <p>[LG유플러스] 멤버십 적용 메가박스 할인!</p>
+                <p>2024.04.03 ~ 2025.12.31</p>
+              </div>
+            </li>
           </ul>
         </div> <!--frame-->
         <p>

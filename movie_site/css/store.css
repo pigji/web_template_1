@@ -109,6 +109,9 @@ main .store_box::after{ /*클리어픽스 핵*/
 
 
 /*각 목록박스*/
+section{
+  margin: 0 auto;
+}
 main section article{
    /* border: 1px solid red; */
    width: 250px;
