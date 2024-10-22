@@ -555,8 +555,8 @@ section .content > .date > button:hover{
 /*--------------------------------------------------*/
 /*section : 공지사항, Q&A*/
 section > .bg-color3{
-  margin: 30px 0;
-  padding-top: 50px;
+  margin: 30px 0 70px;
+  padding-top: 30px;
 }
 section > .bg-color3 .user-menu{
   display: flex;
@@ -565,18 +565,45 @@ section > .bg-color3 .user-menu{
   text-align: center;
 }
 section > .bg-color3 .user-menu > .box{
-  width: 190px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   color: #222;
   padding-top: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  text-align: center;
 }
-/*아이콘*/
-section > .bg-color3 .user-menu > .box i{
-  color: #037b94;
-  font-size: 40px;
+/*아이콘 속성*/
+section > .bg-color3 .user-menu > .box > p{
+  margin: 0 auto;
+  background-repeat: no-repeat;
 }
+section > .bg-color3 .user-menu > .box:nth-of-type(1) > p{
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-customer.png) center/cover;
+  width: 46px;
+  height: 46px;
+}
+section > .bg-color3 .user-menu > .box:nth-of-type(2) > p{
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-faq.png) center/cover;
+  width: 50px;
+  height: 46px;
+}
+section > .bg-color3 .user-menu > .box:nth-of-type(3) > p{
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-qna.png) center/cover;
+  width: 50px;
+  height: 50px;
+}
+section > .bg-color3 .user-menu > .box:nth-of-type(4) > p{
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-group.png) center/cover;
+  width: 50px;
+  height: 38px;
+}
+section > .bg-color3 .user-menu > .box:nth-of-type(5) > p{
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-lost.png) center/cover;
+  width: 51px;
+  height: 39px
+}
+
 section > .bg-color3 .user-menu > .box > a{
   margin-top: 10px;
   display: block;
@@ -659,6 +686,7 @@ footer .f-box > .f-menu > .txt{
   font-size: 13px;
   margin-left: 50px;
   width: 65%;
+  color: #333;
 }
 /*sns 아이콘*/
 footer .f-box > .f-menu > .sns{
