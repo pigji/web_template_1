@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>capsule</title>
+</head>
+<body>
+  <script>
+    //(function)(){}() : 즉시 실행함수
+    const Person = (function(){
+      let _age = 0; //private(은닉화)
+
+      //생성자 함수
+      function Person(name, age){
+        this.name = name; //public
+        _age = age;
+      }
+
+      //프로토타입 메소드
+      Person.prototype.sayHi = function(){
+        console.log(`Hi! My name is ${this.name}. I am ${_age}.`)
+      };
+      //생성자 함수를 반환
+      return Person;
+    }());
+
+    const me = new Person('Lee', 20);
+    me.sayHi(); //Hi My name is Lee. I am 20 출력
+    console.log(me.name);
+    console.log(me._age); //undefined -> 은닉화로 안보임
+
+    const you = new Person('Kim', 30);
+    you.sayHi(); //Hi My name is Lee. I am 20 출력
+    console.log(you.name);
+    console.log(you._age); //undefined -> 은닉화로 안보임
+  </script>
+</body>
+</html>

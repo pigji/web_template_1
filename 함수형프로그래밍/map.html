@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map</title>
+</head>
+<body>
+  <script>
+    //배열 생성
+    const numbers = [1, 4, 9];
+
+    //map메소드는 numbers배열의 모든 요소를 순회하면서 콜백함수를 반복 호출한다.
+    const roots = numbers.map(item => Math.sqrt(item));  //sqrt : 제곱근 구하는 함수명
+    //그러면 콜백함수의 반환값들로 구성된 새로운 배열을 반환한다.
+    console.log(numbers)
+    console.log(roots)  //1, 3, 9 = 제곱근 값 출력
+
+    //
+    class Prefixer{
+      constructor(prefix){  //constructor : 생성자함수 생성
+        this.prefix = prefix;
+      }
+      add(arr){
+        //화살표함수 내부에서 this를 참조하면 상위 스코프의 this를 그대로 참조한다.
+        return arr.map(item => this.prefix + item)
+      }
+    }
+    const prefixer = new Prefixer('-webkit-');
+    console.log(prefixer.add(['transition', 'user-select'])); //// ['-webkit-transition', '-webkit-user-select'] 출력
+
+  </script>
+</body>
+</html>

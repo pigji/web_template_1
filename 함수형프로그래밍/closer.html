@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>closer</title>
+</head>
+<body>
+  <script>
+    //전역변수
+    const x = 1;
+
+    function foo(){
+      //지역변수
+      const x = 10;
+      //상위 스코프는 함수 정의 환경(위치)에 따라 결졍된다.
+      //함수 호출 위치와 상위 스코프는 아무런 관계가 없다. 
+      bar();  //foo함수 내부에서 bar함수를 호출
+    }
+
+    function bar(){
+      console.log(x);
+    }
+
+    foo();  //foo함수 호출
+    bar();  //결과로 둘다 전역변수 x에 할당한 값이 1이 출력된다.
+
+    function outer(){
+      const x = 20;
+      const inner = function(){console.log(x)}
+      //inner함수 변환
+      return inner;
+    }
+
+    const innerFunc = outer();  //outer함수는 중첩함수 inner를 반환하고, 실행 컨텍스트 스택에서 제거된다.
+
+    innerFunc();  //outer함수의 지역변수 x의 값인 20이 이미 실행 컨텍스트 스택에서 제거된 outer함수의 지역 변수 x가 다시 부활한듯이 동작한다
+  </script>
+</body>
+</html>

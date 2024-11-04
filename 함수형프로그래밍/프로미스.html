@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로미스</title>
+</head>
+<body>
+  <script>
+    //프로미스는 별도로 함수로 감싸서 사용하는 것이 일반적이다.
+    function getData(){
+      return new Promise(function(resolve, reject){
+        let data = 100;
+        resolve(data);
+      })
+    }
+    //resolve()의 결과 값으로 data를 resolvedData로 전달
+    getData().then(function(resolvedData){
+      console.log(resolvedData);  //100출력
+    })
+
+    //reject를 호출하면 rejected(실패)상태가 된다.
+    function getData2(){
+      new Promise(function(resolve, reject){
+        reject(new Error("request is failed"));
+      })
+    }
+    //실패처리 결과 값을 catch()로 받을 수 있다.
+    getData2().then().catch(function(err){  //reject의 결과값 Error를 err로 받음
+      console.log(err)
+    })
+
+  </script>
+</body>
+</html>
