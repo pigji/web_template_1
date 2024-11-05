@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>compose 패턴</title>
+</head>
+<body>
+  <script>
+    const ingredientAdder = (ingredient) => (input) => console.log(`${input}, ${ingredient}`);
+
+    //재료 = bacon, lettuce, cheese를 고정된 인자로 전달
+    const bacon = ingredientAdder("Bacon");
+    const lettuce = ingredientAdder("Lettuce");
+    const cheese = ingredientAdder("Cheese");
+
+    //compose패턴 활용
+    const compose = (...functions) => input => functions.reduceRight((acc, func) => func(acc), input);
+
+    //makeSandwicth함수 호출 시 bread를 인자로 전달
+    const makeSandwich = bread =>
+      //컴포즈 패턴을 활용하여 bread만 새로운 인자로 전달(부분 적용)
+      compose(cheese, lettuce, bacon)(bread);
+
+      //makeSandwich함수 호출
+      makeSandwich('white Bread');
+
+      //pipeline패턴
+      const pipe = (...functions) => input => functions.reduce((acc, func) => func(acc), input);
+
+      const makeSandwich2 = bread => pipe(bacon, lettuce, cheese)(bread);
+
+      makeSandwich2("white Bread");
+
+      //문자열을 slug 형태로 변환
+      const log = console.log;
+
+      //문자열 생성
+      const title = "learnig Function Composition 1";
+
+      //1.문자열 --> 배열
+      const strToArr = str => str.split("");
+
+      //2.배열(단어) --> 소문자로 변환
+      const toLower = arr => arr.map(w => w.toLowerCase()); //toLowerCase : 소문자로 변환하는 내장 메소드
+
+      //3.배열 --> 문자열, 여백처리("")
+      const joinWithDash = arr => arr.join("-");
+
+      //pipe패턴 사용
+      const pipe2 = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);
+
+      const slug = pipe2(strToArr, toLower, joinWithDash)(title);
+      log(slug)
+  </script>
+</body>
+</html>

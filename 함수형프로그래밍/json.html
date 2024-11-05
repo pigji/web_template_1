@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON 연습</title>
+</head>
+<body>
+  <p id="stringify"></p>
+  <p id="parse"></p>
+  <p id="toJson"></p>
+  
+  <script>
+    //자바스크립트 객체
+    let dog = {
+      name : "식빵",
+      family : "웰시코기",
+      age : 1,
+      weight : 2.14
+    }
+
+    //자바스크립트 객체를 문자열로 변환
+    let data = JSON.stringify(dog);
+    console.log(data)
+
+    //문자로 변환한 data를 $stringify에 넣어줌
+    document.getElementById("stringify").innerHTML = data;
+
+    //JSON형식의 문자열을 자바스크립트 객체로 변환
+    let obj = JSON.parse(data);
+    document.getElementById("parse").innerHTML += obj.name + "," + obj.family;
+
+    //자바스크립트 Data 객체
+    let date = new Date();
+
+    //Date객체를 JSON형식의 문자열로 변환함
+    let str = date.toJSON();
+
+    document.getElementById("toJson").innerHTML = str;
+  </script>
+</body>
+</html>

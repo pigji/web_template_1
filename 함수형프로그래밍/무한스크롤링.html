@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무한 스크롤릴</title>
+
+  <style>
+    html{
+      width: 100%;
+      height: 100%;
+    }
+    #container{
+      max-width: 470px;
+      margin: 0 auto; /*가운데정렬*/
+      outline: 1px solid red; /*영역 확인용*/
+    }
+    #photos{
+      display: flex;
+      flex-wrap: wrap;  /*줄바꿈 허용*/
+      width: 100%;
+    }
+    img{
+      width: 150px;
+      display: flex;
+      flex-basis: 100%;
+      flex: 1;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="photos"></div>
+  </div>
+
+  <script>
+    //참고 : url주소 ?뒤에 붙는 부분을 url파라미터라고 함
+    // _limit=10 : 데이터를 10개로 제한해서 읽어오라는 뜻
+    // _page=숫자 : 페이지의 번호로 숫자가 1이면 1~10까지, 2면 11~20까지의 데이터를 가져옴
+
+    //1.getPhotos함수는 페이지 번호(page)를 인자로 받아 해당 페이지의 사진을 가져오는 URL을 생성합니다.
+    const getPhotos = page => {
+      const url = `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`;
+      //fetch를 통해 url로 요청을 보내고 받은 응답을 json형태로 변환하여 반환
+      return fetch(url).then(response => response.json())
+    }
+
+    const log = console.log;
+    //테스트 => page번호는 1번으로 전달
+    // getPhotos(1).then(data => {
+    //   log(data)
+    // })
+
+    //2. mapPhotos함수는 getPhotos에서 리턴받은 데이터에서 썸네일url만 추출하여 새로운 배열로 반환합니다.
+    const mapPhotos = photos => {//사진 배열(photos)을 인자로 받습니다
+      return photos.map(photo => {
+        //각 사진의 썸네일 url만 포함된 새로운 객체 배열로 변환하여 반환
+        return {url: photo.thumbnailUrl}
+      })
+    }
+
+    //2테스트
+    // getPhotos(1).then(data => {
+    //   log(mapPhotos(data))
+    // })
+
+    //3. createImgElement함수는 이미지를 생성하는 함수
+    const createImgElement = photo => {//사진 객체를 인자로 받음
+      //img요소를 생성
+      const img = document.createElement("img");
+      //생성한 이미지에 src속성으로 해당 사진의 url을 설정
+      img.src = photo.url;
+      return img; //생성된 이미지 요소를 반환
+    }
+
+    //4.createPhotoElements함수는 createImgElement를 호출하여 이미지 요소 배열을 생성합니다.(매핑작업)
+    const createPhotoElements = photos => {//사진 배열을 인수로 받습니다.
+      //createImgElement를 호출하여 이미지 요소 배열을 생성하여 반환
+      return photos.map(createImgElement);
+    }
+
+    //4테스트
+    // getPhotos(1).then((data) => {
+    //   const testData = mapPhotos(data);
+    //   log(
+    //     //createImgElement(testData[0])
+    //     createPhotoElements(testData)
+    //   )
+    // })
+
+    //5. appendPhotoElements는 사진 요소를 해당 DOM(el)에 사진 요소들을 추가하는 함수
+    const appendPhotoElements = (photoElements, el) => {//사진 요소 배열과 DOM요소(#photos)를 인자로 받습니다.
+      //el이 정의되어 있을 경우, 해당 DOM요소에 사진 요소들을 추가합니다.
+      return el?.append(...photoElements);
+    }
+
+    //5.테스트
+    getPhotos(1).then((data) => {
+      const testData = mapPhotos(data)
+      const photoElementsTest = createPhotoElements(testData);
+      appendPhotoElements(photoElementsTest, document.querySelector("#photos"))
+    })
+
+    //파이프라인 패턴을 이용해서 함수를 합성
+    //6.pipe는 연결된 함수들을 순차적으로 실행하는 역할
+
+    //pipe함수는 여러 함수(...fns)를 인자로 받음
+    //이 반환된 함수는 하나의 인자(arg)를 받는데 이 인자는 파이프라인의 첫번째 함수에 전달될 초기값이다.
+    const pipe = (...fns) => (arg) => 
+    //result는 현재까지의 누적 결과, fn은 현재 처리중인 함수
+    //fn이 함수이면 result.then(fn)을 통해서 비동기적으로 함수를 실행
+    //fn이 함수가 아니면 현재 result를 그대로 반환한다.
+      fns.reduce((result, fn) => (
+        fn instanceof Function ? result.then(fn) : result),
+        //reduce의 초기값으로 사용, 초기 인자 arg를 감싼 Promise가 생성됩니다.
+        Promise.resolve(arg)
+      );
+
+    //7. $함수는 css선택자를 인자로 받아 해당 DOM요소를 반환하는 헬퍼 함수입니다.
+    const $ = el => document.querySelector(el);
+    //$("#photos") = 아이디가 photos인 요소를 선택
+
+    //8.processPhotos는 pipe함수를 호출하여 사진을 처리하는 일련의 과정을 수행합니다.
+    const processPhotos = pipe(
+      getPhotos,
+      mapPhotos,
+      createPhotoElements,
+      //appendPhotoElements만 다른 이유는 2개의 인자를 받아야하기 때문이다.
+      (photoElements) => appendPhotoElements(photoElements, $("#photos"))
+    )
+
+  </script>
+</body>
+</html>

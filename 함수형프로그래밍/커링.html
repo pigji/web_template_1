@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커링</title>
+</head>
+<body>
+  <script>
+    //커피를 주문하는 함수 생성
+    function makeCoffee(roastType){
+      return function(sugar){
+        return function(cream){
+          return console.log(`Coffee : ${roastType}, sugar : ${sugar}, crean : ${cream}`);
+        }
+      }
+    }
+    //makeCoffee 함수 호출
+    makeCoffee("Dark Roast")(1)(2); //Coffee : Dark Roast, sugar : 1, crean : 2 출력
+
+    //부분 적용
+    const mdeiumRoast = makeCoffee("Medium Roast");
+
+    //주문이 들어왔다고 가정
+    const order1 = mdeiumRoast(1)(2);
+    const order2 = mdeiumRoast(2)(3);
+
+    //샌드위치를 만드는 함수 예시(HOF패턴)
+    const ingredientAdder = (ingredient) => (input) => console.log(`${input}, ${ingredient}`);
+
+    //재료 = bacon, lettuce, cheese를 고정된 인자로 전달
+    const bacon = ingredientAdder("Bacon");
+    const lettuce = ingredientAdder("Lettuce");
+    const cheese = ingredientAdder("Cheese");
+
+    //중첩된 고차함수들로 합성된 패턴(가독성이 나쁨, 재사용하기 힘듦)
+    const makeSandwich = bread => cheese(lettuce(bacon(bread)));
+
+    makeSandwich('White Bread');
+</script>
+</body>
+</html>
