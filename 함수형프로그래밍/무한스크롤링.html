@@ -130,6 +130,40 @@
       (photoElements) => appendPhotoElements(photoElements, $("#photos"))
     )
 
+    //9.처음 페이지를 불러올때 페이지 넘버를 인자로 전달해주면 됩니다.
+    processPhotos(1);
+
+    //10.페이지를 관리하고 비동기적으로 사진을 가져오는 기능을 갖춘 함수
+    const getNextphotos = (() => {  //즉시 실행함수
+      let page = 1; //현재 페이지 번호를 추적하는데 사용하는 변수
+      //*함수를 클로저로 만들면 page라는 상태변수를 전역 스코프로 안빼오고 내부에서 활용할 수 있어서 사이드이펙트를 최대한 줄일 수 있다.
+      let isFetching = false; //현재 데이터를 가져오는 중인지 여부를 나타내며, 중복 호출을 방지하기 위해서 사용
+      return () => {  //함수를 반환(클로저 패턴)
+        if(!isFetching){  //isFetching변수가 fasle인 경우(현재 데이터를 가져오고 있지 않은 경우) 코드 실행
+          isFetching = true;  //현재 데이터를 가져오고 있음을 나타냄
+          const nextPage = ++page;  //page를 1증가시켜 다음 페이지 번호를 결정
+          //processPhotos함수를 호출, 이때 nextPage를 인자로 전달하여 다음 페이지의 사진을 요청합니다.
+          processPhotos(nextPage).then(() => {
+            isFetching = false; //데이터를 성공적으로 가져온 후 isFetching을 다시 false로 설정하여 다음 호출이 가능하게 만듭니다.
+          })
+        }
+      }
+    })();
+
+    //11.스크롤 이벤트 리스너 추가
+    addEventListener("scroll", () => {
+      //현재 스크롤 위치를 계산, (뷰포트의 높이 + 스클롤 이동한 값 = 현재 보이는 화면의 최하단 위치)
+      const scrollPos = window.innerHeight + window.scrollY;
+      
+      //전체 문서의 높이
+      const bodyHeight = document.body.offsetHeight;
+
+      //현재 스크롤 위치(scrollPos)가 전체 페이지의높이(bodyHeight)와 같거나 클 경우(페이지의 맨 아래에 스크롤이 도달했음을 의미)
+      if(scrollPos >= bodyHeight){
+        getNextphotos();  //getNextPhotos함수를 호출하여 다음 페이지의 사진을 가져옴
+      }
+    })
+
   </script>
 </body>
 </html>
