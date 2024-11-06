@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async/await</title>
+</head>
+<body>
+  <script>
+    // async/ await는 비동기적 접근방식을 동기적으로 작성할 수 있게 해주어 코드가 간결해지며 가독성을 높여 유지 보수를 용이하게 해준다.
+    //async function에서 어떤 값을 리턴하든 무조건 프로미스 객체로 감싸져 반환 된다
+
+
+    //프로미스 객체를 반환하는 함수
+    function delay(ms){
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log(`${ms} 밀리초가 지났습니다.`);
+          resolve()
+        }, ms);
+      });
+    }
+
+    // async/await 방식
+    async function main() {
+      await delay(1000);
+      await delay(2000);
+      
+      const result = await Promise.resolve("끝");
+      console.log(result)
+    }
+
+    //main함수 호출
+    main();
+  </script>
+</body>
+</html>
